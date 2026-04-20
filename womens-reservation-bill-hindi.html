@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>नारी शक्ति: संसद में महिला आरक्षण का लंबा सफर</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Tiro+Devanagari+Hindi:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --parchment: #f5efe4;
+    --warm-white: #faf7f2;
+    --accent-saffron: #d4600a;
+    --accent-green: #2d6a4f;
+    --accent-gold: #b8860b;
+    --muted: #7a6e60;
+    --border: #d4c9b5;
+    --card-bg: #fffdf8;
+    --highlight: #fff3e0;
+    --shadow: rgba(26,18,8,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--ink);
+    font-family: 'Tiro Devanagari Hindi', 'DM Sans', serif;
+    font-weight: 400;
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+
+  /* Hindi body text uses Tiro Devanagari; English labels use DM Mono */
+  .mono { font-family: 'DM Mono', monospace; }
+  .en { font-family: 'DM Sans', sans-serif; font-weight: 300; }
+
+  /* ─── HERO ─────────────────────────────────────────────── */
+  .hero {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 80px 5vw 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.015) 3px, rgba(255,255,255,0.015) 4px);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-saffron);
+  }
+
+  .hero-sub {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+    color: #c4b89a;
+    margin-top: 14px;
+    max-width: 620px;
+    line-height: 1.8;
+  }
+
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    border-left: 2px solid var(--accent-saffron);
+    padding-left: 16px;
+  }
+
+  .hero-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--parchment);
+    line-height: 1;
+  }
+
+  .hero-stat .label {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.78rem;
+    color: #a09580;
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  .hero-scroll {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: #a09580;
+    text-transform: uppercase;
+  }
+
+  .hero-scroll-line { width: 60px; height: 1px; background: #a09580; }
+
+  /* ─── EXPLAINER ─────────────────────────────────────────── */
+  .explainer {
+    background: var(--highlight);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 5vw;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .explainer-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+  .explainer p {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .explainer strong { color: var(--ink); }
+
+  /* ─── NAV ──────────────────────────────────────────────── */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,247,242,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 5vw;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .sticky-nav::-webkit-scrollbar { display: none; }
+
+  .nav-btn {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border: 1px solid transparent;
+    background: none;
+    cursor: pointer;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .nav-btn:hover, .nav-btn.active {
+    border-color: var(--accent-saffron);
+    color: var(--accent-saffron);
+    background: rgba(212,96,10,0.05);
+  }
+
+  /* ─── LAYOUT ────────────────────────────────────────────── */
+  .main-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5vw;
+  }
+
+  /* ─── SECTION HEADERS ───────────────────────────────────── */
+  .section-header {
+    padding: 60px 0 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--border);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .section-kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+  }
+
+  .section-title {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+
+  /* ─── CHART ─────────────────────────────────────────────── */
+  .chart-section { padding-bottom: 60px; border-bottom: 1px solid var(--border); }
+
+  .chart-intro {
+    max-width: 700px;
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .chart-wrap {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+
+  .chart-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 160px;
+    padding-bottom: 30px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bar-group { display: flex; flex-direction: column; align-items: center; flex: 1; }
+
+  .bar {
+    width: 100%;
+    background: var(--accent-saffron);
+    opacity: 0.7;
+    border-radius: 2px 2px 0 0;
+    transition: opacity 0.2s;
+    position: relative;
+  }
+
+  .bar:hover { opacity: 1; }
+
+  .bar-val {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .bar-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.52rem;
+    color: var(--muted);
+    margin-top: 8px;
+    text-align: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    height: 30px;
+    overflow: hidden;
+  }
+
+  .chart-note {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  .global-compare {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .country-tile {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .country-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .country-pct {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .country-bar { height: 3px; background: var(--border); border-radius: 2px; margin-top: 6px; overflow: hidden; }
+  .country-fill { height: 100%; background: var(--accent-green); border-radius: 2px; }
+  .country-tile.india .country-pct { color: var(--accent-saffron); }
+  .country-tile.india .country-fill { background: var(--accent-saffron); }
+
+  /* ─── TIMELINE ──────────────────────────────────────────── */
+  .timeline-section { padding-bottom: 80px; }
+
+  .timeline-intro {
+    max-width: 700px;
+    margin-bottom: 48px;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .timeline { position: relative; padding-left: 40px; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-saffron), var(--border), var(--accent-green));
+  }
+
+  .tl-item { position: relative; margin-bottom: 0; }
+
+  .tl-dot {
+    position: absolute;
+    left: -47px; top: 24px;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--warm-white);
+    border: 2px solid var(--accent-saffron);
+    transition: all 0.2s;
+  }
+
+  .tl-item.lapsed .tl-dot { border-color: var(--muted); }
+  .tl-item.passed .tl-dot { background: var(--accent-green); border-color: var(--accent-green); }
+  .tl-item.current .tl-dot { background: var(--accent-saffron); border-color: var(--accent-saffron); box-shadow: 0 0 0 4px rgba(212,96,10,0.15); }
+
+  .tl-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin: 8px 0 24px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .tl-card:hover { box-shadow: 0 4px 20px var(--shadow); }
+
+  .tl-card-header {
+    padding: 20px 24px 16px;
+    cursor: pointer;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .tl-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: var(--border);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 80px;
+  }
+
+  .tl-item.current .tl-year { color: var(--accent-saffron); }
+  .tl-item.passed .tl-year { color: var(--accent-green); }
+
+  .tl-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
+  .badge-lapsed { background: #f0ede8; color: var(--muted); }
+  .badge-passed { background: #e8f4f0; color: var(--accent-green); }
+  .badge-active { background: #fff3e0; color: var(--accent-saffron); }
+  .badge-pending { background: #fef9ec; color: var(--accent-gold); }
+  .badge-milestone { background: var(--ink); color: var(--parchment); }
+
+  .tl-headline {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .tl-summary {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .tl-expand-btn {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.82rem;
+    color: var(--accent-saffron);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tl-expand-btn::after { content: '▼'; font-size: 0.5rem; transition: transform 0.2s; }
+  .tl-expand-btn.open::after { transform: rotate(180deg); }
+
+  .tl-detail {
+    display: none;
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    background: var(--parchment);
+  }
+
+  .tl-detail.open { display: block; }
+
+  /* English detail note style */
+  .en-detail-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 2px solid var(--border);
+    padding: 8px 14px;
+    margin-bottom: 16px;
+  }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .detail-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 16px;
+  }
+
+  .detail-box-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin-bottom: 10px;
+  }
+
+  .detail-box p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .detail-box ul { list-style: none; padding: 0; }
+
+  .detail-box ul li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink);
+    line-height: 1.65;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-weight: 300;
+  }
+
+  .detail-box ul li:last-child { border-bottom: none; }
+  .detail-box ul li::before { content: '→'; color: var(--accent-saffron); flex-shrink: 0; font-size: 0.75rem; margin-top: 2px; }
+
+  .pullquote {
+    border-left: 3px solid var(--accent-saffron);
+    padding: 12px 20px;
+    margin: 16px 0;
+    background: var(--highlight);
+    border-radius: 0 3px 3px 0;
+  }
+
+  .pullquote p {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-style: italic;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+
+  .pullquote cite {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 8px;
+    font-style: normal;
+  }
+
+  .source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--accent-green);
+    text-decoration: none;
+    border: 1px solid var(--accent-green);
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin: 4px 4px 4px 0;
+    transition: all 0.2s;
+  }
+
+  .source-link:hover { background: var(--accent-green); color: white; }
+
+  /* ─── PROVISIONS ─────────────────────────────────────────── */
+  .provisions-section { padding: 60px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+  .provisions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .provision-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px;
+    background: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .provision-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent-saffron); }
+
+  .provision-icon { font-size: 1.8rem; margin-bottom: 12px; }
+
+  .provision-title {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .provision-text {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .provision-article {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--accent-saffron);
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+
+  /* ─── DEBATE ─────────────────────────────────────────────── */
+  .debate-section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .debate-col-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    margin-bottom: 12px;
+    border-radius: 2px;
+  }
+
+  .pro .debate-col-title { background: #e8f4f0; color: var(--accent-green); }
+  .con .debate-col-title { background: #fef0e8; color: #b85c2a; }
+
+  .debate-point {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.88rem;
+    line-height: 1.75;
+  }
+
+  .debate-point:last-child { border-bottom: none; }
+  .debate-icon { flex-shrink: 0; font-size: 0.9rem; margin-top: 4px; }
+
+  /* ─── 2026 SECTION ───────────────────────────────────────── */
+  .current-section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+
+  .alert-box {
+    background: var(--ink);
+    color: var(--parchment);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .alert-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+  .alert-content h3 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--parchment);
+  }
+
+  .alert-content p {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.88rem;
+    color: #c4b89a;
+    line-height: 1.75;
+  }
+
+  .bills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .bill-card { border: 1px solid var(--border); border-radius: 4px; padding: 20px; background: var(--card-bg); }
+
+  .bill-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--accent-saffron);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .bill-name {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .bill-desc {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ─── DOCUMENTS ──────────────────────────────────────────── */
+  .docs-section { padding: 60px 0; }
+
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .doc-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    background: var(--card-bg);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+  }
+
+  .doc-card:hover { border-color: var(--accent-saffron); box-shadow: 0 4px 16px var(--shadow); }
+
+  .doc-icon { font-size: 2rem; flex-shrink: 0; opacity: 0.6; }
+
+  .doc-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin-bottom: 4px;
+  }
+
+  .doc-title {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .doc-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────────────── */
+  footer {
+    background: var(--ink);
+    color: #a09580;
+    padding: 40px 5vw;
+    font-size: 0.82rem;
+    line-height: 1.75;
+    border-top: 3px solid var(--accent-saffron);
+    font-family: 'Tiro Devanagari Hindi', serif;
+  }
+
+  footer strong { color: var(--parchment); }
+  footer a { color: var(--accent-saffron); }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 24px;
+  }
+
+  .footer-sources h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    margin-bottom: 12px;
+  }
+
+  .footer-sources ol { padding-left: 20px; }
+  .footer-sources li { margin-bottom: 6px; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 300; }
+
+  /* ─── MOBILE UTILITY ────────────────────────────────────────── */
+  .col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* ─── RESPONSIVE ─────────────────────────────────────────── */
+  @media (max-width: 700px) {
+    .tl-card-header { flex-direction: column; gap: 8px; }
+    .tl-year { font-size: 1.4rem; min-width: auto; }
+    .section-header { flex-direction: column; gap: 4px; }
+    .section-num { font-size: 3rem; }
+    .hero-meta { gap: 20px; }
+    .col2 { grid-template-columns: 1fr !important; }
+    .detail-grid { grid-template-columns: 1fr !important; }
+    .provisions-grid { grid-template-columns: 1fr !important; }
+    .bills-grid { grid-template-columns: 1fr !important; }
+    .docs-grid { grid-template-columns: 1fr !important; }
+    .global-compare { grid-template-columns: repeat(3, 1fr) !important; }
+    .debate-grid { grid-template-columns: 1fr !important; }
+    .footer-grid { grid-template-columns: 1fr !important; }
+    .timeline { padding-left: 28px; }
+    .tl-dot { left: -35px; }
+    .main-wrap { padding: 0 4vw; }
+    .hero { padding: 48px 5vw 40px; }
+    .tl-detail { padding: 16px; }
+  }
+
+  /* ─── ANIMATIONS ─────────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tl-card { animation: fadeUp 0.4s ease both; }
+  .tl-item:nth-child(1) .tl-card { animation-delay: 0.05s; }
+  .tl-item:nth-child(2) .tl-card { animation-delay: 0.1s; }
+  .tl-item:nth-child(3) .tl-card { animation-delay: 0.15s; }
+  .tl-item:nth-child(4) .tl-card { animation-delay: 0.2s; }
+  .tl-item:nth-child(5) .tl-card { animation-delay: 0.25s; }
+  .tl-item:nth-child(6) .tl-card { animation-delay: 0.3s; }
+  .tl-item:nth-child(7) .tl-card { animation-delay: 0.35s; }
+  .tl-item:nth-child(8) .tl-card { animation-delay: 0.4s; }
+  .tl-item:nth-child(9) .tl-card { animation-delay: 0.45s; }
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-label">एक संवैधानिक इतिहास · 1946–2026</div>
+  <div style="display:flex; align-items:flex-start; gap:40px; flex-wrap:wrap;">
+    <div style="flex:1; min-width:260px;">
+      <h1>नारी शक्ति:<br><em>संसद में महिला</em><br>आरक्षण का<br>लंबा सफर</h1>
+      <p class="hero-sub">संसद में महिलाओं के एक-तिहाई प्रतिनिधित्व का वादा — आज़ादी के बाद की एक आकांक्षा से लेकर संवैधानिक संशोधन तक — और यह सफर अभी भी अधूरा क्यों है।</p>
+    </div>
+    <div style="flex-shrink:0; padding-top:8px; min-width:260px; max-width:300px; width:100%;">
+      <div style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:#a09580; margin-bottom:12px;">18वीं लोकसभा · 543 सीटें</div>
+      <div id="parliament-dots" style="line-height:0; width:100%; max-width:280px;"></div>
+      <div style="display:flex; gap:14px; margin-top:10px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:6px;">
+          <div style="width:9px;height:9px;border-radius:50%;background:#e05252;flex-shrink:0;"></div>
+          <span style="font-family:'DM Mono',monospace;font-size:0.58rem;color:#a09580;">महिला सांसद — 74</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <div style="width:9px;height:9px;border-radius:50%;background:#e8948a;opacity:0.7;flex-shrink:0;"></div>
+          <span style="font-family:'DM Mono',monospace;font-size:0.58rem;color:#a09580;">33% लक्ष्य तक का अंतर — 107 और</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <div style="width:9px;height:9px;border-radius:50%;background:#6a5f50;opacity:0.5;flex-shrink:0;"></div>
+          <span style="font-family:'DM Mono',monospace;font-size:0.58rem;color:#a09580;">पुरुष सांसद — 469</span>
+        </div>
+      </div>
+      <div style="font-family:'DM Mono',monospace;font-size:0.55rem;color:#6a6050;margin-top:5px;">हर बिंदु = 1 सांसद</div>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-stat">
+      <div class="num">27 वर्ष</div>
+      <div class="label">पहले विधेयक (1996) से पारित होने (2023) तक</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">4</div>
+      <div class="label">विधेयक पेश हुए, 2023 से पहले सब निरस्त</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">13.6%</div>
+      <div class="label">18वीं लोकसभा (2024) में महिला सांसद — 2019 के 14.4% से भी कम</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">33%</div>
+      <div class="label">2023 के अधिनियम द्वारा अनिवार्य आरक्षण — अभी तक लागू नहीं</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">17 अप्रैल</div>
+      <div class="label">2026: परिसीमन को महिला आरक्षण से जोड़ने वाला संशोधन विधेयक संसद के विशेष सत्र में पेश हुआ और गिर गया — <button onclick="scrollToSection('current-section')" style="background:none;border:none;color:#c4b89a;font-family:'Tiro Devanagari Hindi',serif;font-size:0.78rem;cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px;opacity:0.8;">विवरण देखें ↓</button></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>नीचे स्क्रोल करें</span>
+  </div>
+</section>
+
+<!-- ─── EXPLAINER ─────────────────────────────────────────── -->
+<div class="explainer">
+  <div class="explainer-icon">ℹ️</div>
+  <p>यह पृष्ठ <strong>आम पाठकों</strong> और <strong>शोधकर्ताओं</strong> दोनों के लिए लिखा गया है। हर समयरेखा कार्ड में एक संक्षिप्त सारांश है — <em>"विस्तृत विश्लेषण पढ़ें"</em> पर क्लिक करने पर मूल दस्तावेज़ों के अनुसार गहरा विवरण उपलब्ध है। गहरे विवरण (अनुच्छेद, समिति रिपोर्ट) अंग्रेज़ी में हैं क्योंकि मूल संसदीय दस्तावेज़ अंग्रेज़ी में हैं।</p>
+</div>
+
+<!-- ─── NAV ──────────────────────────────────────────────── -->
+<nav class="sticky-nav">
+  <button class="nav-btn" onclick="scrollToSection('data-section')">📊 आंकड़े</button>
+  <button class="nav-btn" onclick="scrollToSection('timeline-section')">📜 समयरेखा</button>
+  <button class="nav-btn" onclick="scrollToSection('provisions-section')">⚖️ 2023 का अधिनियम</button>
+  <button class="nav-btn" onclick="scrollToSection('debate-section')">🗣️ प्रमुख बहसें</button>
+  <button class="nav-btn" onclick="scrollToSection('current-section')">🔴 2026: विधेयक गिरा</button>
+  <button class="nav-btn" onclick="scrollToSection('docs-section')">📂 दस्तावेज़</button>
+</nav>
+
+<!-- ─── MAIN ──────────────────────────────────────────────── -->
+<div class="main-wrap">
+
+  <!-- ─── DATA ───────────────────────────────────────────── -->
+  <div id="data-section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">आरक्षण क्यों?</div>
+        <div class="section-title">प्रतिनिधित्व की खाई</div>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <p class="chart-intro">महिलाएं भारत की लगभग आधी आबादी हैं, लेकिन लोकसभा में उनका प्रतिनिधित्व कभी 15% से अधिक नहीं रहा। इस लोकतांत्रिक खाई को पाटने के लिए ही महिला आरक्षण अधिनियम बनाया गया।</p>
+
+      <div class="chart-wrap">
+        <div class="chart-title">लोकसभा में महिला सांसदों का प्रतिशत — पहली से 18वीं लोकसभा तक</div>
+        <div class="bar-chart" id="lsChart"></div>
+        <p class="chart-note">स्रोत: PRS Legislative Research, Vital Stats — Women in Parliament and State Assemblies (सितंबर 2023)</p>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-title">अंतर्राष्ट्रीय तुलना — राष्ट्रीय संसद में महिलाओं का प्रतिशत (2023)</div>
+        <div class="global-compare">
+          <div class="country-tile"><div class="country-name">स्वीडन</div><div class="country-pct">46%</div><div class="country-bar"><div class="country-fill" style="width:92%"></div></div></div>
+          <div class="country-tile"><div class="country-name">नॉर्वे</div><div class="country-pct">46%</div><div class="country-bar"><div class="country-fill" style="width:92%"></div></div></div>
+          <div class="country-tile"><div class="country-name">द. अफ्रीका</div><div class="country-pct">45%</div><div class="country-bar"><div class="country-fill" style="width:90%"></div></div></div>
+          <div class="country-tile"><div class="country-name">ऑस्ट्रेलिया</div><div class="country-pct">38%</div><div class="country-bar"><div class="country-fill" style="width:76%"></div></div></div>
+          <div class="country-tile"><div class="country-name">यू.के.</div><div class="country-pct">35%</div><div class="country-bar"><div class="country-fill" style="width:70%"></div></div></div>
+          <div class="country-tile"><div class="country-name">अमेरिका</div><div class="country-pct">29%</div><div class="country-bar"><div class="country-fill" style="width:58%"></div></div></div>
+          <div class="country-tile"><div class="country-name">बांग्लादेश</div><div class="country-pct">21%</div><div class="country-bar"><div class="country-fill" style="width:42%"></div></div></div>
+          <div class="country-tile india"><div class="country-name">भारत ◀</div><div class="country-pct">15%</div><div class="country-bar"><div class="country-fill" style="width:30%"></div></div></div>
+          <div class="country-tile"><div class="country-name">जापान</div><div class="country-pct">10%</div><div class="country-bar"><div class="country-fill" style="width:20%"></div></div></div>
+        </div>
+        <p class="chart-note">स्रोत: Inter-Parliamentary Union; PRS Vital Stats 2023. भारत प्रमुख लोकतंत्रों में सबसे नीचे है।</p>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-title">राज्य विधानसभाओं में महिला विधायक — औसत 9% (2023)</div>
+        <p style="font-size:0.88rem; color:var(--muted); margin-bottom:12px; font-family:'Tiro Devanagari Hindi',serif;">किसी भी राज्य में महिला विधायकों का प्रतिशत 20% से अधिक नहीं था। छत्तीसगढ़ सर्वाधिक 18% के साथ शीर्ष पर था; मिज़ोरम में एक भी महिला विधायक नहीं थी।</p>
+        <div class="detail-box">
+          <ul>
+            <li>छत्तीसगढ़ — 18% (देश में सर्वाधिक)</li>
+            <li>पश्चिम बंगाल — 14%</li>
+            <li>राजस्थान — 14%</li>
+            <li>ओडिशा — 12%</li>
+            <li>बिहार — 12%</li>
+            <li>हिमाचल प्रदेश — केवल 1 महिला विधायक</li>
+            <li>मिज़ोरम — 0% महिला विधायक</li>
+          </ul>
+        </div>
+        <p class="chart-note">स्रोत: PRS Vital Stats 2023. जो महिलाएं चुनाव लड़ती हैं, उनकी जीत दर पुरुषों के बराबर है — बाधा नामांकन के स्तर पर है, मतपत्र पर नहीं।</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── TIMELINE ────────────────────────────────────────── -->
+  <div id="timeline-section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">77 वर्षों का सफर</div>
+        <div class="section-title">समयरेखा</div>
+      </div>
+    </div>
+    <p class="timeline-intro">संविधान सभा की पहली बहसों से लेकर 2026 के परिसीमन विधेयकों तक — नौ महत्वपूर्ण पड़ाव जो भारत के संघर्ष को परिभाषित करते हैं।</p>
+
+    <div class="timeline">
+
+      <!-- 1946 -->
+      <div class="tl-item lapsed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">1946</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-milestone">आरंभ</span>
+              <div class="tl-headline">संविधान सभा: एकमात्र महिला उपस्थित</div>
+              <p class="tl-summary">जब भारत का संविधान बनाने के लिए संविधान सभा बुलाई गई, तो उद्घाटन सत्र में सरोजिनी नायडू एकमात्र महिला थीं। संसद में महिलाओं के लिए सीट आरक्षित करने पर बहस हुई — और प्रस्ताव अस्वीकार हो गया।</p>
+              <button class="tl-expand-btn">विस्तृत विश्लेषण पढ़ें</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="en-detail-note">विस्तृत संसदीय रिकॉर्ड अंग्रेज़ी में उपलब्ध है।</div>
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">क्या हुआ</div>
+                <p>Constituent Assembly debated reserving seats for women alongside reservations for Scheduled Castes and Scheduled Tribes. The proposal was rejected. Framers chose equal voting rights for women with no guaranteed seats — formal equality was deemed sufficient.</p>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">तर्क</div>
+                <ul>
+                  <li>Women had equal citizenship and voting rights — formal equality was considered sufficient</li>
+                  <li>SC/ST reservation was justified by caste-based exclusion; gender was treated differently</li>
+                  <li>Many women members themselves opposed separate reservation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1992-93 -->
+      <div class="tl-item passed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">1992–93</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-passed">पारित</span>
+              <div class="tl-headline">73वां और 74वां संशोधन: एक मिसाल कायम होती है</div>
+              <p class="tl-summary">संसद ने संविधान (73वां संशोधन) अधिनियम, 1992 और संविधान (74वां संशोधन) अधिनियम, 1992 पारित किए — दोनों 1993 में लागू हुए। इन संशोधनों ने पंचायतों और नगरपालिकाओं में महिलाओं के लिए एक-तिहाई सीटें आरक्षित कीं — और वह नज़ीर पेश की जो बाद में संसद पर लागू होनी थी।</p>
+              <button class="tl-expand-btn">विस्तृत विश्लेषण पढ़ें</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="en-detail-note">विस्तृत संसदीय रिकॉर्ड अंग्रेज़ी में उपलब्ध है।</div>
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">क्या बना कानून</div>
+                <ul>
+                  <li>Constitution (73rd Amendment) Act, 1992 (in force 24 April 1993) — Article 243D(3): not less than 1/3 of panchayat seats reserved for women</li>
+                  <li>Constitution (74th Amendment) Act, 1992 (in force 1 June 1993) — Article 243T: not less than 1/3 of municipality seats reserved for women</li>
+                  <li>SC/ST reserved seats — 1/3 further reserved for women of those communities</li>
+                  <li>Passed under P.V. Narasimha Rao's government in 1992</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">क्या सिद्ध हुआ</div>
+                <ul>
+                  <li>By 2009, over 10 lakh women held elected office in local bodies — more than any other country</li>
+                  <li>Women's actual representation reached 42.3% — beyond the mandated 33%</li>
+                  <li>Early fears of "proxy" women proved largely unfounded</li>
+                  <li>Studies showed women prioritised water, sanitation, schools — changing local policy outcomes</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pullquote">
+              <p>पंचायती राज में आरक्षण का प्रयोग उम्मीद से अधिक सफल रहा — और यही सबसे मज़बूत तर्क बना कि इसे संसद तक बढ़ाया जाए।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1996 -->
+      <div class="tl-item lapsed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">1996</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-lapsed">निरस्त</span>
+              <div class="tl-headline">संविधान (81वां संशोधन) विधेयक: पहला प्रयास, पहली विफलता</div>
+              <p class="tl-summary">11वीं लोकसभा में महिलाओं के लिए संसदीय सीटें आरक्षित करने का पहला औपचारिक प्रयास। इसे गीता मुखर्जी की अध्यक्षता में संयुक्त संसदीय समिति को भेजा गया। समिति ने 1996 में अपनी रिपोर्ट दी, लेकिन लोकसभा भंग होने से विधेयक निरस्त हो गया।</p>
+              <button class="tl-expand-btn">विस्तृत विश्लेषण पढ़ें</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="en-detail-note">विस्तृत संसदीय रिकॉर्ड अंग्रेज़ी में उपलब्ध है।</div>
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">गीता मुखर्जी समिति की सिफारिशें (1996)</div>
+                <ul>
+                  <li>One-third reservation of parliamentary seats for women — supported</li>
+                  <li>Reservation for 15 years, then reviewed</li>
+                  <li>OBC women to be considered for sub-reservation "at appropriate time"</li>
+                  <li>Reservation to be considered for Rajya Sabha and Legislative Councils</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">विफलता का कारण</div>
+                <ul>
+                  <li>The 11th Lok Sabha was dissolved before the bill could be voted on</li>
+                  <li>Fundamentally a timing failure, not a rejection</li>
+                  <li>Demand for OBC sub-quota from parties like SP and RJD beginning to emerge</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1998–1999 -->
+      <div class="tl-item lapsed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">1998–99</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-lapsed">दो बार निरस्त</span>
+              <div class="tl-headline">संविधान (84वां और 85वां संशोधन) विधेयक: संसद में हंगामा</div>
+              <p class="tl-summary">दो और विधेयक लगातार लोकसभाओं में पेश हुए — दोनों भंग होने पर निरस्त। इन बहसों में क्षेत्रीय दलों के सांसदों ने सदन में विधेयक की प्रतियां फाड़ीं और कार्यवाही बाधित की। मुख्य माँग थी: महिला कोटे के भीतर अन्य पिछड़ा वर्ग (ओबीसी) की महिलाओं के लिए उप-कोटा।</p>
+              <button class="tl-expand-btn">विस्तृत विश्लेषण पढ़ें</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="en-detail-note">विस्तृत संसदीय रिकॉर्ड अंग्रेज़ी में उपलब्ध है।</div>
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">ओबीसी उप-कोटा विवाद</div>
+                <p>Parties argued that without a sub-quota for OBC women, the bill would primarily benefit upper-caste women. This "quota within quota" demand became the central political deadlock — one that persisted through 2023.</p>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">गिल फार्मूला — एक विकल्प</div>
+                <p>The Election Commission proposed requiring political parties to nominate a minimum percentage of women candidates. Widely rejected — critics argued parties would nominate women only in unwinnable seats, making the provision cosmetic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2008–2014 -->
+      <div class="tl-item lapsed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">2008–14</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-lapsed">राज्यसभा से पास, लोकसभा में निरस्त</span>
+              <div class="tl-headline">संविधान (108वां संशोधन) विधेयक: सबसे करीब आई सफलता</div>
+              <p class="tl-summary">मई 2008 में यूपीए सरकार ने यह विधेयक राज्यसभा में पेश किया। दो साल की संसदीय स्थायी समिति की जांच के बाद, मार्च 2010 में राज्यसभा ने इसे पारित किया — किसी भी सदन द्वारा पहली बार। लेकिन लोकसभा में कभी मतदान नहीं हुआ, और 2014 में 15वीं लोकसभा भंग होने पर यह निरस्त हो गया।</p>
+              <button class="tl-expand-btn">विस्तृत विश्लेषण पढ़ें</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="en-detail-note">विस्तृत संसदीय रिकॉर्ड अंग्रेज़ी में उपलब्ध है।</div>
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">108वें संशोधन विधेयक के मुख्य प्रावधान</div>
+                <ul>
+                  <li>1/3 reservation in Lok Sabha and all state legislative assemblies</li>
+                  <li>Quota-within-quota for SC/ST women within reserved seats</li>
+                  <li>Reservation for 15 years, then reviewable</li>
+                  <li>Reserved seats to rotate after each general election</li>
+                  <li>No OBC sub-quota — the core political controversy</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">36वीं संसदीय स्थायी समिति रिपोर्ट (2009)</div>
+                <ul>
+                  <li>Chaired by Jayanthi Natarajan (INC)</li>
+                  <li>14 sittings; visited 10 states; heard NGOs, parties, state governments</li>
+                  <li>Unanimous: reservation is "a valid and necessary strategy"</li>
+                  <li>Rejected double-member constituencies — would make women "second class MPs"</li>
+                  <li>Opposed leaving nomination to parties — would produce only "losing seats"</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pullquote">
+              <p>समिति का निष्कर्ष था: "महिला आरक्षण विधेयक को संसद में पारित किया जाए और बिना किसी और देरी के लागू किया जाए।" गीता मुखर्जी समिति की रिपोर्ट के 12 साल से अधिक बीत चुके थे — और 13 साल और बीतने के बाद यह हुआ।</p>
+              <cite>— 36th Report, Standing Committee on Personnel, Public Grievances, Law and Justice (December 2009)</cite>
+            </div>
+            <div style="margin-top:16px;">
+              <a class="source-link" href="https://prsindia.org/files/bills_acts/bills_parliament/2008/scr_Women_Reservation_Bill_2009.pdf" target="_blank">📄 36वीं स्थायी समिति रिपोर्ट पढ़ें (2009)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sept 2023 -->
+      <div class="tl-item passed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">सितंबर 2023</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-passed">दोनों सदनों से पारित</span>
+              <div class="tl-headline">नारी शक्ति वंदन अधिनियम: संसद में अंततः मतदान</div>
+              <p class="tl-summary">19 सितंबर 2023 को — नए संसद भवन में कारोबार के पहले दिन — सरकार ने संविधान (128वां संशोधन) विधेयक, 2023 पेश किया। 20 सितंबर को लोकसभा ने <strong>454 पक्ष, 2 विरोध</strong> से पारित किया; 21 सितंबर को राज्यसभा ने <strong>214 पक्ष, शून्य विरोध</strong> से। 28 सितंबर 2023 को राष्ट्रपति द्रौपदी मुर्मू ने हस्ताक्षर किए। लेकिन इसमें एक महत्वपूर्ण शर्त रखी गई: आरक्षण तभी लागू होगा जब नई जनगणना और उसके आधार पर परिसीमन हो।</p>
+              <button class="tl-expand-btn">विस्तृत विश्लेषण पढ़ें</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="en-detail-note">अनुच्छेदों का विस्तृत विवरण अंग्रेज़ी में उपलब्ध है — नीचे देखें।</div>
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">अधिनियम के मुख्य प्रावधान</div>
+                <ul>
+                  <li>Inserts Article 330A — reserves 1/3 of Lok Sabha seats for women</li>
+                  <li>Inserts Article 332A — reserves 1/3 of every State Assembly for women</li>
+                  <li>Amends Article 239AA — covers Delhi Legislative Assembly</li>
+                  <li>Inserts Article 334A — the commencement condition (census + delimitation)</li>
+                  <li>SC/ST women get 1/3 of SC/ST reserved seats</li>
+                  <li>15-year sunset clause, extendable by Parliament</li>
+                  <li>Seats rotate after each delimitation exercise</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">लागू होने की शर्त (अनुच्छेद 334क)</div>
+                <p>Reservation comes into effect only after: (1) the first census conducted after the Act's commencement is published; AND (2) a delimitation exercise is completed based on that census. This conditionality is the central issue now before Parliament.</p>
+              </div>
+            </div>
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">क्या नहीं है इस अधिनियम में</div>
+                <ul>
+                  <li>No reservation in Rajya Sabha or state Legislative Councils</li>
+                  <li>No OBC sub-quota within women's quota</li>
+                  <li>No fixed commencement date — contingent on census and delimitation</li>
+                  <li>Does not apply to currently sitting Houses until dissolution</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">राजनीतिक संदर्भ</div>
+                <ul>
+                  <li>Introduced in the first session of the new Parliament building — symbolic timing</li>
+                  <li>Near-unanimous support across party lines</li>
+                  <li>OBC sub-quota demand not included — same sticking point as 2008</li>
+                  <li>Critics noted census condition meant no reservation before 2029 at earliest</li>
+                </ul>
+              </div>
+            </div>
+            <div style="margin-top:16px;">
+              <a class="source-link" href="https://prsindia.org/billtrack/the-constitution-one-hundred-twenty-eighth-amendment-bill-2023" target="_blank">📄 PRS Bill Track: 128वां संशोधन विधेयक</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 28 Sept 2023 -->
+      <div class="tl-item passed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">28 सित. 2023</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-passed">अधिनियमित</span>
+              <div class="tl-headline">राष्ट्रपति की स्वीकृति और राजपत्र अधिसूचना: संविधान का 106वां संशोधन</div>
+              <p class="tl-summary">राष्ट्रपति द्रौपदी मुर्मू ने उसी दिन विधेयक पर हस्ताक्षर किए और भारत के राजपत्र में अधिसूचना प्रकाशित हुई — जिससे महिला आरक्षण एक संवैधानिक अधिकार बना। यह संविधान (106वां संशोधन) अधिनियम, 2023 — जिसे नारी शक्ति वंदन अधिनियम कहते हैं — बन गया। लागू होना अभी भी जनगणना और परिसीमन पर निर्भर था।</p>
+              <button class="tl-expand-btn">विस्तृत विश्लेषण पढ़ें</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-box" style="max-width:600px;">
+              <div class="detail-box-title">संविधान में जोड़े गए अनुच्छेद</div>
+              <ul>
+                <li><strong>अनुच्छेद 330क</strong> — Reservation of seats for women in the House of the People (Lok Sabha)</li>
+                <li><strong>अनुच्छेद 332क</strong> — Reservation of seats for women in the Legislative Assembly of every State</li>
+                <li><strong>अनुच्छेद 239कक (संशोधित)</strong> — Clauses (ba), (bb), (bc) added for Delhi Assembly reservation</li>
+                <li><strong>अनुच्छेद 334क</strong> — Governs when reservation takes effect; 15-year sunset; rotation after each delimitation</li>
+              </ul>
+            </div>
+            <p style="font-size:0.83rem; color:var(--muted); margin-top:16px; font-family:'DM Sans',sans-serif; font-weight:300;">The gazette notification clarified the amendments shall not affect any existing House until dissolution — the 17th Lok Sabha (2019–2024) continued unchanged.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2025-26 -->
+      <div class="tl-item current">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">2025–26</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-pending">जारी</span>
+              <div class="tl-headline">जनगणना की घोषणा — लेकिन समयसीमा आगे खिसकी</div>
+              <p class="tl-summary">2021 की जनगणना कोविड-19 के कारण टल गई। जून 2025 में सरकार ने राजपत्र में जनगणना 2027 की अधिसूचना जारी की, जिसकी संदर्भ तिथि 1 मार्च 2027 है। इसका अर्थ था: 2027 की जनगणना के आधार पर परिसीमन 2029 के लोकसभा चुनाव से पहले संभव नहीं — और महिला आरक्षण भी 2029 में लागू नहीं होगा।</p>
+              <button class="tl-expand-btn">विस्तृत विश्लेषण पढ़ें</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">समयसीमा की समस्या</div>
+                <ul>
+                  <li>Census 2021 postponed due to COVID-19 pandemic</li>
+                  <li>Census 2027 notified in Gazette on 4 June 2025 (reference date: 1 March 2027)</li>
+                  <li>2023 Act requires delimitation based on "the first census after commencement"</li>
+                  <li>Last Delimitation Commission (2002) took 6 years to complete its work</li>
+                  <li>2029 Lok Sabha elections would arrive before Census 2027 delimitation could finish</li>
+                  <li>Result: reservation effectively deferred to 2034 elections at earliest</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">राजनीतिक दबाव</div>
+                <ul>
+                  <li>Critics argued the 2023 Act's conditionality had no guaranteed implementation timeline</li>
+                  <li>PM Modi published op-ed on 9 April 2026 urging urgency on women's representation</li>
+                  <li>Pressure mounted to delink reservation from Census 2027 and use 2011 data</li>
+                  <li>Three new bills were introduced in Parliament on 16 April 2026</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apr 2026 -->
+      <div class="tl-item lapsed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">अप्रैल 2026</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-lapsed">लोकसभा में पराजित</span>
+              <div class="tl-headline">संविधान (131वां संशोधन) विधेयक: पेश हुआ, बहस हुई, गिर गया</div>
+              <p class="tl-summary">16 अप्रैल 2026 को विशेष संसद सत्र में तीन विधेयक पेश किए गए — लोकसभा को 850 सीटों तक बढ़ाना, 2011 की जनगणना के आधार पर परिसीमन और 2029 में महिला आरक्षण। 17 अप्रैल को मतदान हुआ: 298 पक्ष, 230 विरोध। 528 सदस्यों में से सरकार को 352 वोट चाहिए थे — 54 कम पड़े। परिसीमन विधेयक और यूटी विधेयक वापस लिए गए। यह पहला मौका था जब 2014 के बाद कोई संवैधानिक संशोधन विधेयक लोकसभा में गिरा।</p>
+              <button class="tl-expand-btn">विस्तृत विश्लेषण पढ़ें</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="en-detail-note">विस्तृत विधायी विश्लेषण अंग्रेज़ी में उपलब्ध है।</div>
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">तीन विधेयक (16–17 अप्रैल 2026)</div>
+                <ul>
+                  <li><strong>Constitution (131st Amendment) Bill</strong> — Would have expanded Lok Sabha maximum from 550 to 850 seats; reverted to population-proportional delimitation; gave Parliament authority to choose which census is used; amended Article 334A to delink women's reservation from Census 2027</li>
+                  <li><strong>Delimitation Bill, 2026</strong> — Delimitation Commission using 2011 Census data. Withdrawn after amendment fell.</li>
+                  <li><strong>UT Laws (Amendment) Bill, 2026</strong> — Extended provisions to Puducherry, Delhi, J&amp;K. Withdrawn.</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">विफलता के कारण — उत्तर-दक्षिण विभाजन</div>
+                <ul>
+                  <li>Population-proportional delimitation would reduce southern states' seats: Tamil Nadu 39→~32, Kerala 20→~15</li>
+                  <li>Northern states would gain: Uttar Pradesh 80→~89, Bihar 40→~46</li>
+                  <li>The constitutional amendment gave Parliament (simple majority) power over timing of delimitation — weakening Rajya Sabha's role</li>
+                  <li>Both sides disputed the characterisation of the vote — the government argued opposition blocked women's reservation; opposition argued they had voted unanimously for it in 2023 and were opposing the delimitation package</li>
+                </ul>
+              </div>
+            </div>
+            <div style="margin-top:16px;">
+              <a class="source-link" href="https://prsindia.org/billtrack/the-constitution-131st-amendment-bill-2026" target="_blank">📄 PRS Bill Track: 131वां संशोधन विधेयक 2026</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── PROVISIONS ────────────────────────────────────────── -->
+  <div id="provisions-section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">संविधान (106वां संशोधन) अधिनियम, 2023</div>
+        <div class="section-title">कानून क्या कहता है</div>
+      </div>
+    </div>
+
+    <div class="provisions-section">
+      <p style="max-width:700px; font-size:0.92rem; color:var(--muted); margin-bottom:0; font-family:'Tiro Devanagari Hindi',serif;">नारी शक्ति वंदन अधिनियम ने संविधान में चार नए उपबंध जोड़े। यहाँ सरल भाषा में उनका विवरण है।</p>
+      <div class="provisions-grid">
+        <div class="provision-card">
+          <div class="provision-icon">🏛️</div>
+          <div class="provision-title">लोकसभा में आरक्षण</div>
+          <p class="provision-text">लोकसभा की सभी सीटों में से एक-तिहाई महिलाओं के लिए आरक्षित होंगी। अनुसूचित जाति और अनुसूचित जनजाति के लिए आरक्षित सीटों में से भी एक-तिहाई उन वर्गों की महिलाओं को।</p>
+          <div class="provision-article">अनुच्छेद 330क</div>
+        </div>
+        <div class="provision-card">
+          <div class="provision-icon">🏢</div>
+          <div class="provision-title">राज्य विधानसभाओं में आरक्षण</div>
+          <p class="provision-text">हर राज्य विधानसभा की एक-तिहाई सीटें महिलाओं के लिए — अनुसूचित जाति/जनजाति के लिए वही उप-कोटा। दिल्ली की विधानसभा भी शामिल।</p>
+          <div class="provision-article">अनुच्छेद 332क + 239कक</div>
+        </div>
+        <div class="provision-card">
+          <div class="provision-icon">⏳</div>
+          <div class="provision-title">लागू होने की शर्त</div>
+          <p class="provision-text">आरक्षण तभी प्रभावी होगा जब: (1) अधिनियम के लागू होने के बाद की पहली जनगणना के आंकड़े प्रकाशित हों; और (2) उस जनगणना के आधार पर परिसीमन हो। यही वह शर्त है जो अभी भी विवाद का विषय है।</p>
+          <div class="provision-article">अनुच्छेद 334क(1)</div>
+        </div>
+        <div class="provision-card">
+          <div class="provision-icon">📅</div>
+          <div class="provision-title">15 वर्ष की समयसीमा</div>
+          <p class="provision-text">आरक्षण लागू होने की तिथि से 15 वर्ष बाद स्वतः समाप्त हो जाएगा — लेकिन संसद कानून बनाकर इसे आगे बढ़ा सकती है। जिस तरह एससी/एसटी आरक्षण 1950 से बढ़ता रहा है।</p>
+          <div class="provision-article">अनुच्छेद 334क(1)</div>
+        </div>
+        <div class="provision-card">
+          <div class="provision-icon">🔄</div>
+          <div class="provision-title">सीटों का आवर्तन</div>
+          <p class="provision-text">महिलाओं के लिए आरक्षित विशेष निर्वाचन क्षेत्र हर परिसीमन के बाद बदलेंगे — संसद इसका तरीका तय करेगी। कोई भी क्षेत्र स्थायी रूप से आरक्षित नहीं रहेगा।</p>
+          <div class="provision-article">अनुच्छेद 334क(3)</div>
+        </div>
+        <div class="provision-card">
+          <div class="provision-icon">🛡️</div>
+          <div class="provision-title">पूर्वव्यापी प्रभाव नहीं</div>
+          <p class="provision-text">यह संशोधन किसी भी मौजूदा लोकसभा, राज्य विधानसभा या दिल्ली विधानसभा को तब तक प्रभावित नहीं करेगा जब तक वह सामान्य चुनाव चक्र में भंग न हो।</p>
+          <div class="provision-article">अनुच्छेद 334क(4) + धारा 6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── DEBATE ─────────────────────────────────────────────── -->
+  <div id="debate-section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">विवादित प्रश्न</div>
+        <div class="section-title">प्रमुख बहसें</div>
+      </div>
+    </div>
+
+    <div class="debate-section">
+      <p style="max-width:700px; font-size:0.92rem; color:var(--muted); margin-bottom:8px; font-family:'Tiro Devanagari Hindi',serif;">ये सरल प्रश्न नहीं हैं। महिला आरक्षण को लेकर तीन दशकों से बहस जारी है। यहाँ संसदीय रिकॉर्ड से दोनों पक्षों के सबसे मज़बूत तर्क।</p>
+
+      <div class="debate-grid">
+        <div class="pro">
+          <div class="debate-col-title">आरक्षण के पक्ष में तर्क</div>
+          <div class="debate-point"><span class="debate-icon">✅</span><span>महिलाएं आबादी का 50% हैं लेकिन संसद का 15% से भी कम। संरचनात्मक हस्तक्षेप के बिना — पितृसत्तात्मक दल संरचना, पुरुष उम्मीदवारों की वरीयता, धन की कमी — यह खाई बनी रहेगी।</span></div>
+          <div class="debate-point"><span class="debate-icon">✅</span><span>पंचायती राज का अनुभव (1993 के बाद) सिद्ध करता है कि यह काम करता है: महिलाएं कुशल जन-प्रतिनिधि साबित हुईं; "प्रॉक्सी" का डर निराधार निकला; वास्तविक प्रतिनिधित्व 42.3% तक पहुंचा।</span></div>
+          <div class="debate-point"><span class="debate-icon">✅</span><span>संविधान का अनुच्छेद 15(3) स्पष्ट रूप से राज्य को महिलाओं के लिए विशेष प्रावधान करने की अनुमति देता है। यह समानता से विचलन नहीं — यह व्यवस्थित असमानता का सुधार है।</span></div>
+          <div class="debate-point"><span class="debate-icon">✅</span><span>अंतर्राष्ट्रीय प्रमाण: जिन देशों में कानूनी कोटा है, वहाँ महिला प्रतिनिधित्व तेज़ी से बढ़ा। 2023 तक भारत प्रमुख लोकतंत्रों में सबसे नीचे था — बांग्लादेश और ब्राज़ील से भी पीछे।</span></div>
+          <div class="debate-point"><span class="debate-icon">✅</span><span>दलों पर नामांकन छोड़ना (गिल फार्मूला) विफल होता है — दल महिलाओं को हारने वाली सीटें देते हैं। संवैधानिक अनिवार्यता ही विश्वसनीय रास्ता है।</span></div>
+        </div>
+        <div class="con">
+          <div class="debate-col-title">आलोचनाएं और प्रतिवाद</div>
+          <div class="debate-point"><span class="debate-icon">⚠️</span><span>ओबीसी उप-कोटे के बिना यह आरक्षण मुख्यतः उच्च जाति और शहरी महिलाओं को लाभ देगा। तर्क: केवल लिंग पर्याप्त श्रेणी नहीं है; वास्तविक प्रतिनिधित्व के लिए जाति और वर्ग भी संबोधित होने चाहिए।</span></div>
+          <div class="debate-point"><span class="debate-icon">⚠️</span><span>आरक्षित क्षेत्रों का आवर्तन विधायकों को दीर्घकालिक निर्वाचन क्षेत्र संबंध बनाने से रोकता है। एक महिला आरक्षित सीट से चुनी जाए और अगले चुनाव में वह सीट अनारक्षित हो जाए — जवाबदेही कमज़ोर होती है।</span></div>
+          <div class="debate-point"><span class="debate-icon">⚠️</span><span>सीट आरक्षण आरक्षित क्षेत्रों में मतदाताओं की पसंद सीमित करता है। कुछ विशेषज्ञ दल-स्तरीय कोटा या दो-सदस्यीय निर्वाचन क्षेत्र जैसे कम बाध्यकारी विकल्पों का सुझाव देते हैं।</span></div>
+          <div class="debate-point"><span class="debate-icon">⚠️</span><span>2023 के अधिनियम में जनगणना-परिसीमन की शर्त ने कार्यान्वयन को 2034 या उससे आगे टाल दिया। आलोचकों का तर्क था कि अनुच्छेद 334क में बनी शर्त ने कोई गारंटीशुदा कार्यान्वयन तंत्र नहीं छोड़ा।</span></div>
+          <div class="debate-point"><span class="debate-icon">⚠️</span><span>संख्यात्मक उपस्थिति = वास्तविक प्रतिनिधित्व नहीं। शोध बताते हैं कि हाशिए के समुदायों की महिला सरपंचें पद पर रहते हुए भी निर्णय-प्रक्रिया में बाधाओं का सामना करती हैं।</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 2026 SECTION ───────────────────────────────────────── -->
+  <div id="current-section">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">अप्रैल 2026 · परिणाम</div>
+        <div class="section-title">दो बहसें, एक विधेयक: वास्तव में क्या गिरा?</div>
+      </div>
+    </div>
+
+    <div class="current-section">
+
+      <!-- Key distinction box -->
+      <div style="background:var(--ink); color:var(--parchment); border-radius:4px; padding:28px 32px; margin-bottom:32px;">
+        <div style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent-saffron); margin-bottom:16px;">⚠ महत्वपूर्ण अंतर — पहले यह पढ़ें</div>
+        <div class="col2" style="margin-bottom:20px;">
+          <div style="padding-right:4px;">
+            <div style="font-family:'Tiro Devanagari Hindi',serif; font-size:1.05rem; font-weight:700; color:var(--parchment); margin-bottom:10px;">बहस क: महिला आरक्षण ✓ तय हो चुका है</div>
+            <p style="font-family:'Tiro Devanagari Hindi',serif; font-size:0.88rem; color:#c4b89a; line-height:1.75;">क्या संसद में महिलाओं के लिए एक-तिहाई सीटें आरक्षित हों? यह 1996 से 2023 तक बहस का विषय था। <strong style="color:var(--parchment);">संविधान (106वां संशोधन) अधिनियम, 2023</strong> ने इसे <strong style="color:var(--parchment);">लगभग सर्वसम्मति से</strong> तय कर दिया। यह बहस संवैधानिक रूप से बंद है।</p>
+          </div>
+          <div>
+            <div style="font-family:'Tiro Devanagari Hindi',serif; font-size:1.05rem; font-weight:700; color:var(--parchment); margin-bottom:10px;">बहस ख: परिसीमन और सीट विस्तार ✗ जारी है</div>
+            <p style="font-family:'Tiro Devanagari Hindi',serif; font-size:0.88rem; color:#c4b89a; line-height:1.75;">क्या लोकसभा 543 से 850 सीटों तक बढ़े? क्या जनसंख्या-आनुपातिक सीट आवंटन हो — जिससे दक्षिणी राज्यों का हिस्सा घटे? यह एक <strong style="color:var(--parchment);">अलग, पुराना संवैधानिक प्रश्न</strong> है जो महिला आरक्षण से दशकों पहले से चला आ रहा है।</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #3a3225; padding-top:16px;">
+          <p style="font-family:'Tiro Devanagari Hindi',serif; font-size:0.88rem; color:#c4b89a; line-height:1.75;"><strong style="color:var(--accent-saffron);">दोनों कैसे जुड़ गए:</strong> 2023 के अधिनियम ने महिला आरक्षण को जनगणना के बाद के परिसीमन पर निर्भर कर दिया (अनुच्छेद 334क)। इससे एक श्रृंखला बनी — कोई भी परिसीमन अब सीट विस्तार और उत्तर-दक्षिण प्रतिनिधित्व की बहस को अनिवार्यतः फिर खोलता है। अप्रैल 2026 के विधेयकों ने दोनों को एक साथ हल करने की कोशिश की। 2023 में 106वें संशोधन के पक्ष में मतदान करने वाले दलों ने 2026 के विधेयकों के विरुद्ध मतदान किया — महिला आरक्षण का विरोध नहीं, बल्कि साथ में जोड़े गए परिसीमन पैकेज का।</p>
+        </div>
+      </div>
+
+      <!-- Outcome alert -->
+      <div class="alert-box" style="background:#3d1408;">
+        <div class="alert-icon">❌</div>
+        <div class="alert-content">
+          <h3>17 अप्रैल 2026: संविधान (131वां संशोधन) विधेयक पराजित — एक ऐतिहासिक पहली बार</h3>
+          <p>298 मतदान पक्ष में, 230 विरोध में। उपस्थित 528 सदस्यों में से अनुच्छेद 368 के तहत दो-तिहाई बहुमत के लिए 352 मत चाहिए थे — 54 कम पड़े। सरकार ने तुरंत परिसीमन विधेयक और यूटी विधेयक वापस लिए। नारी शक्ति वंदन अधिनियम (2023) 16 अप्रैल 2026 से आधिकारिक रूप से लागू अधिसूचित हुआ — लेकिन बिना परिसीमन के महिला आरक्षण अभी भी सक्रिय नहीं हो सकता।</p>
+        </div>
+      </div>
+
+      <!-- Two debates -->
+      <div class="col2" style="margin-top:28px;">
+        <div>
+          <div style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent-green); background:#e8f4f0; padding:8px 14px; margin-bottom:12px; border-radius:2px;">महिला आरक्षण — 2023 में तय</div>
+          <div class="detail-box">
+            <div class="detail-box-title">संविधान में क्या है</div>
+            <ul>
+              <li>लोकसभा की 33% सीटें — <strong>अधिनियमित (अनु. 330क)</strong></li>
+              <li>हर राज्य विधानसभा की 33% सीटें — <strong>अधिनियमित (अनु. 332क)</strong></li>
+              <li>अनुसूचित जाति/जनजाति महिलाओं का उप-कोटा — <strong>अधिनियमित</strong></li>
+              <li>15 वर्ष की समयसीमा, संसद द्वारा विस्तार संभव — <strong>अधिनियमित</strong></li>
+              <li>सभी प्रमुख दलों ने सितंबर 2023 में पक्ष में मतदान किया</li>
+            </ul>
+          </div>
+          <div class="detail-box" style="margin-top:12px;">
+            <div class="detail-box-title">अभी भी अनिर्णीत</div>
+            <ul>
+              <li>ओबीसी उप-कोटा — अभी कानून में नहीं</li>
+              <li>राज्यसभा और विधान परिषदों में आरक्षण — नहीं</li>
+              <li><strong>कार्यान्वयन तिथि</strong> — परिसीमन पर निर्भर, अभी अनिश्चित</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:#b85c2a; background:#fef0e8; padding:8px 14px; margin-bottom:12px; border-radius:2px;">परिसीमन बहस — अलग, जारी</div>
+          <div class="detail-box">
+            <div class="detail-box-title">उत्तर-दक्षिण विभाजन</div>
+            <p style="font-size:0.83rem; color:var(--ink); line-height:1.65; margin-bottom:8px; font-family:'DM Sans',sans-serif; font-weight:300;">2011 के आंकड़ों पर जनसंख्या-आनुपातिक परिसीमन का प्रभाव:</p>
+            <ul>
+              <li>Tamil Nadu: 39 → ~32 seats (−7)</li>
+              <li>Kerala: 20 → ~15 seats (−5)</li>
+              <li>Uttar Pradesh: 80 → ~89 seats (+9)</li>
+              <li>Bihar: 40 → ~46 seats (+6)</li>
+            </ul>
+          </div>
+          <div class="detail-box" style="margin-top:12px;">
+            <div class="detail-box-title">2026 में विरोध के कारण</div>
+            <ul>
+              <li>दक्षिणी राज्यों को स्थायी राजनीतिक हाशियाकरण का डर</li>
+              <li>संशोधन ने सरल बहुमत से परिसीमन के समय का फैसला संसद को दे दिया — राज्यसभा की भूमिका कमज़ोर</li>
+              <li>Lok Sabha से Rajya Sabha का अनुपात 2.2:1 से 3.3:1 हो जाता — संयुक्त बैठक में शक्ति-संतुलन बदलता</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Three bills -->
+      <div style="margin-top:28px;">
+        <div style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:12px;">तीन विधेयक — 16 अप्रैल को पेश, 17 अप्रैल 2026 को गिरे/वापस लिए</div>
+        <div class="bills-grid">
+          <div class="bill-card" style="border-color:#c47a6a; background:#fff8f6;">
+            <div class="bill-number" style="color:#b85c2a;">❌ संविधान (131वां संशोधन) विधेयक — पराजित (298–230)</div>
+            <div class="bill-name">मूल संशोधन</div>
+            <p class="bill-desc">लोकसभा की अधिकतम सीटें 550 से बढ़ाकर 850 करना। जनसंख्या-आनुपातिक सीट आवंटन। संसद को जनगणना चुनने का अधिकार। अनुच्छेद 334क में बदलाव। 352 वोट चाहिए थे, मिले 298।</p>
+          </div>
+          <div class="bill-card" style="border-color:#c47a6a; background:#fff8f6;">
+            <div class="bill-number" style="color:#b85c2a;">↩ परिसीमन विधेयक, 2026 — वापस लिया</div>
+            <div class="bill-name">तंत्र</div>
+            <p class="bill-desc">2011 की जनगणना के आधार पर परिसीमन आयोग का गठन। 131वां संशोधन विधेयक गिरने के बाद संवैधानिक आधार न रहा — वापस लिया।</p>
+          </div>
+          <div class="bill-card" style="border-color:#c47a6a; background:#fff8f6;">
+            <div class="bill-number" style="color:#b85c2a;">↩ यूटी कानून (संशोधन) विधेयक — वापस लिया</div>
+            <div class="bill-name">विस्तार</div>
+            <p class="bill-desc">पुदुच्चेरी, दिल्ली और जम्मू-कश्मीर विधानसभाओं पर समान प्रावधान। 131वां संशोधन गिरने के बाद यह भी वापस।</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- What next -->
+      <div style="background:var(--parchment); border:1px solid var(--border); border-radius:4px; padding:20px 24px; margin-top:28px;">
+        <h4 style="font-family:'DM Mono',monospace; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:16px;">अब आगे क्या?</h4>
+        <div class="col2" style="margin-top:8px;">
+          <div class="detail-box">
+            <div class="detail-box-title">अप्रैल 2026 की स्थिति</div>
+            <ul>
+              <li>नारी शक्ति वंदन अधिनियम 16 अप्रैल 2026 से लागू अधिसूचित</li>
+              <li>अनुच्छेद 334क अभी भी जनगणना के बाद के परिसीमन पर निर्भर</li>
+              <li>जनगणना 2027 की संदर्भ तिथि: 1 मार्च 2027</li>
+              <li>2029 चुनावों में महिला आरक्षण लागू होना व्यावहारिक रूप से असंभव</li>
+              <li>संभावित कार्यान्वयन: 2034 लोकसभा चुनाव</li>
+            </ul>
+          </div>
+          <div class="detail-box">
+            <div class="detail-box-title">आगे के रास्ते</div>
+            <ul>
+              <li>एक संकीर्ण विधेयक जो केवल अनुच्छेद 334क की जनगणना-परिसीमन शर्त हटाए — बिना सीट विस्तार के — अधिक समर्थन पा सकता है</li>
+              <li>भविष्य के सत्र में संशोधित विधेयक आ सकता है</li>
+              <li>कोई विधायी समाधान न हो तो: 2027 जनगणना + परिसीमन, लेकिन 2034 से पहले नहीं</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="pullquote" style="margin-top:24px;">
+        <p>2023 का अधिनियम सर्वसम्मति से पारित हुआ था। 2026 के विधेयक 298 बनाम 230 से गिरे। यह अंतर महिला आरक्षण पर विचार बदलने का नहीं था — बल्कि परिसीमन और सीट विस्तार का वह पैकेज था जो इतना विवादास्पद साबित हुआ कि पारित न हो सका। संसद जिस महिला आरक्षण पर पहले ही सहमत है, उसे इन गहरे विवादों को फिर खोले बिना कैसे सक्रिय किया जाए — यह केंद्रीय अनुत्तरित प्रश्न है।</p>
+        <cite>— PRS Legislative Research के संविधान (131वां संशोधन) विधेयक, 2026 और संविधान (106वां संशोधन) अधिनियम, 2023 के विश्लेषण पर आधारित</cite>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── DOCUMENTS ─────────────────────────────────────────── -->
+  <div id="docs-section">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">मूल स्रोत</div>
+        <div class="section-title">प्रमुख दस्तावेज़</div>
+      </div>
+    </div>
+
+    <div class="docs-section">
+      <p style="max-width:700px; font-size:0.92rem; color:var(--muted); margin-bottom:0; font-family:'Tiro Devanagari Hindi',serif;">इस पृष्ठ में उद्धृत सभी मूल विधायी दस्तावेज़ सार्वजनिक रूप से उपलब्ध हैं। शोधकर्ताओं, वकीलों और जिज्ञासु नागरिकों के लिए ये प्राथमिक स्रोत हैं।</p>
+      <div class="docs-grid">
+        <a class="doc-card" href="https://prsindia.org/files/bills_acts/bills_parliament/2023/Bill_Summary-Womens_Reservation_Bill_2023.pdf" target="_blank">
+          <div class="doc-icon">📋</div>
+          <div>
+            <div class="doc-type">PRS Bill Summary</div>
+            <div class="doc-title">महिला आरक्षण विधेयक 2023 — सारांश</div>
+            <div class="doc-year">PRS Legislative Research · 2023</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://prsindia.org/billtrack/the-constitution-one-hundred-twenty-eighth-amendment-bill-2023" target="_blank">
+          <div class="doc-icon">⚖️</div>
+          <div>
+            <div class="doc-type">PRS Bill Track</div>
+            <div class="doc-title">संविधान (128वां संशोधन) विधेयक, 2023 — विस्तृत विश्लेषण</div>
+            <div class="doc-year">PRS Legislative Research · 2023</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://prsindia.org/files/bills_acts/bills_parliament/2008/scr_Women_Reservation_Bill_2009.pdf" target="_blank">
+          <div class="doc-icon">📜</div>
+          <div>
+            <div class="doc-type">संसदीय स्थायी समिति रिपोर्ट</div>
+            <div class="doc-title">36वीं रिपोर्ट — संविधान (108वां संशोधन) विधेयक, 2008</div>
+            <div class="doc-year">कार्मिक, लोक शिकायत, विधि और न्याय समिति · दिसंबर 2009</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://prsindia.org/files/parliament/vital_stats/Vital_Stats-Womens_Reservation.pdf" target="_blank">
+          <div class="doc-icon">📊</div>
+          <div>
+            <div class="doc-type">PRS Vital Stats</div>
+            <div class="doc-title">संसद और राज्य विधानसभाओं में महिलाएं</div>
+            <div class="doc-year">PRS Legislative Research · सितंबर 2023</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://prsindia.org/billtrack/the-constitution-131st-amendment-bill-2026" target="_blank">
+          <div class="doc-icon">❌</div>
+          <div>
+            <div class="doc-type">PRS Bill Track · पराजित</div>
+            <div class="doc-title">संविधान (131वां संशोधन) विधेयक, 2026 — परिसीमन</div>
+            <div class="doc-year">PRS Legislative Research · अप्रैल 2026</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://egazette.gov.in" target="_blank">
+          <div class="doc-icon">🇮🇳</div>
+          <div>
+            <div class="doc-type">भारत का राजपत्र</div>
+            <div class="doc-title">संविधान (106वां संशोधन) अधिनियम, 2023 — राष्ट्रपति की स्वीकृति और राजपत्र अधिसूचना</div>
+            <div class="doc-year">विधि और न्याय मंत्रालय · 28 सितंबर 2023</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end main-wrap -->
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-sources">
+      <h4>स्रोत और पद्धति</h4>
+      <ol>
+        <li>PRS Legislative Research — <em>Women in Parliament and State Assemblies</em> (Vital Stats, September 2023). All statistical data on women's representation.</li>
+        <li>संविधान (128वां संशोधन) विधेयक, 2023 — Bill as introduced in Lok Sabha, 18 September 2023.</li>
+        <li>संविधान (106वां संशोधन) अधिनियम, 2023 — Gazette of India Extraordinary, Part II Section 1, 28 September 2023.</li>
+        <li>36th Report, Standing Committee on Personnel, Public Grievances, Law and Justice — on the Constitution (108th Amendment) Bill, 2008. Presented to Rajya Sabha, 17 December 2009.</li>
+        <li>PRS Legislative Research — Bill Track: Constitution (131st Amendment) Bill, 2026.</li>
+        <li>Inter-Parliamentary Union — Women in National Parliaments statistics, September 2023.</li>
+      </ol>
+    </div>
+    <div>
+      <h4 style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--parchment); margin-bottom:12px;">इस पृष्ठ के बारे में</h4>
+      <p>यह पृष्ठ भारत में महिला राजनीतिक आरक्षण के विधायी इतिहास को दर्ज करने के लिए एक मुक्त शैक्षिक संसाधन के रूप में बनाया गया है। सभी स्रोत दस्तावेज़ सार्वजनिक रूप से उपलब्ध हैं। सामग्री अप्रैल 2026 तक सही है।</p>
+      <p style="margin-top:12px;">प्राथमिक स्रोत: <a href="https://prsindia.org">PRS Legislative Research</a>, लोकसभा और राज्यसभा सचिवालय, विधि एवं न्याय मंत्रालय।</p>
+    </div>
+  </div>
+  <div style="border-top:1px solid #3a3225; padding-top:20px; font-size:0.75rem; font-family:'DM Sans',sans-serif; font-weight:300;">
+    PRS Legislative Research का डेटा उनके गैर-वाणिज्यिक पुनर्वितरण शर्तों के अंतर्गत उपयोग किया गया है। सभी लिंक किए गए दस्तावेज़ उनके संबंधित सरकारी निकायों की संपत्ति हैं।
+  </div>
+</footer>
+
+<script>
+  function toggleDetail(headerEl) {
+    const card = headerEl.closest('.tl-card');
+    const detail = card.querySelector('.tl-detail');
+    const btn = card.querySelector('.tl-expand-btn');
+    if (detail.classList.contains('open')) {
+      detail.classList.remove('open');
+      btn.classList.remove('open');
+      btn.textContent = 'विस्तृत विश्लेषण पढ़ें';
+    } else {
+      detail.classList.add('open');
+      btn.classList.add('open');
+      btn.textContent = 'बंद करें';
+    }
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Lok Sabha chart
+  const lsData = [
+    { ls: '1st', pct: 4.4 }, { ls: '2nd', pct: 6.7 }, { ls: '3rd', pct: 6.7 },
+    { ls: '4th', pct: 5.9 }, { ls: '5th', pct: 4.2 }, { ls: '6th', pct: 19.5 },
+    { ls: '7th', pct: 5.1 }, { ls: '8th', pct: 8.1 }, { ls: '9th', pct: 5.2 },
+    { ls: '10th', pct: 7.0 }, { ls: '11th', pct: 7.4 }, { ls: '12th', pct: 8.1 },
+    { ls: '13th', pct: 8.8 }, { ls: '14th', pct: 8.3 }, { ls: '15th', pct: 10.7 },
+    { ls: '16th', pct: 11.8 }, { ls: '17th', pct: 14.6 }, { ls: '18th', pct: 13.6 }
+  ];
+
+  const maxPct = Math.max(...lsData.map(d => d.pct));
+  const chartEl = document.getElementById('lsChart');
+  const chartHeight = 130;
+
+  lsData.forEach(d => {
+    const h = (d.pct / maxPct) * chartHeight;
+    const group = document.createElement('div');
+    group.className = 'bar-group';
+    group.innerHTML = `
+      <div class="bar" style="height:${h}px;" title="${d.ls} Lok Sabha: ${d.pct}%">
+        <span class="bar-val">${d.pct}%</span>
+      </div>
+      <div class="bar-label">${d.ls}</div>
+    `;
+    chartEl.appendChild(group);
+  });
+
+  // Parliament dot graphic
+  (function() {
+    const container = document.getElementById('parliament-dots');
+    if (!container) return;
+    const total = 543, womenNow = 74, womenTarget = 181;
+    const rowSeats = [40, 57, 68, 78, 88, 97, 115];
+
+    function buildSet(count) {
+      const set = new Set();
+      let seat = 0, placed = 0;
+      rowSeats.forEach(seats => {
+        const inRow = Math.round((seats / total) * count);
+        for (let s = 0; s < seats && placed < count; s++) {
+          if (s < inRow) { set.add(seat + s); placed++; }
+        }
+        seat += seats;
+      });
+      return set;
+    }
+
+    const nowSet = buildSet(womenNow);
+    const targetSet = buildSet(womenTarget);
+    const W = 280, H = 160;
+    const cx = W / 2, cy = H;
+    const r = 2.4, rowGap = 9, innerR = H - 6;
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.setAttribute('width', '100%');
+    svg.setAttribute('height', H);
+    svg.style.display = 'block';
+    svg.style.maxWidth = W + 'px';
+
+    let idx = 0;
+    rowSeats.forEach((seats, rowNum) => {
+      const radius = innerR - rowNum * rowGap;
+      for (let s = 0; s < seats; s++) {
+        const angle = Math.PI - (s / (seats - 1)) * Math.PI;
+        const x = cx + radius * Math.cos(angle);
+        const y = cy - radius * Math.sin(angle);
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('cx', x.toFixed(1));
+        c.setAttribute('cy', y.toFixed(1));
+        c.setAttribute('r', r);
+        if (nowSet.has(idx)) {
+          c.setAttribute('fill', '#e05252'); c.setAttribute('opacity', '1');
+        } else if (targetSet.has(idx)) {
+          c.setAttribute('fill', '#e8948a'); c.setAttribute('opacity', '0.4');
+        } else {
+          c.setAttribute('fill', '#6a5f50'); c.setAttribute('opacity', '0.3');
+        }
+        svg.appendChild(c);
+        idx++;
+      }
+    });
+    container.appendChild(svg);
+  })();
+
+  // Active nav on scroll
+  const sections = ['data-section','timeline-section','provisions-section','debate-section','current-section','docs-section'];
+  const navBtns = document.querySelectorAll('.nav-btn');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) current = id;
+    });
+    navBtns.forEach((btn, i) => {
+      btn.classList.toggle('active', sections[i] === current);
+    });
+  });
+</script>
+</body>
+</html>
