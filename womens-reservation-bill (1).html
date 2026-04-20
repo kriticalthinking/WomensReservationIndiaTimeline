@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nari Shakti: The Long Road to Women's Reservation in Parliament</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --parchment: #f5efe4;
+    --warm-white: #faf7f2;
+    --accent-saffron: #d4600a;
+    --accent-green: #2d6a4f;
+    --accent-gold: #b8860b;
+    --muted: #7a6e60;
+    --border: #d4c9b5;
+    --card-bg: #fffdf8;
+    --highlight: #fff3e0;
+    --timeline-line: #c4b89a;
+    --shadow: rgba(26,18,8,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─────────────────────────────────────────────── */
+  .hero {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 80px 5vw 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255,255,255,0.015) 3px,
+      rgba(255,255,255,0.015) 4px
+    );
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-saffron);
+  }
+
+  .hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: #c4b89a;
+    margin-top: 14px;
+    max-width: 650px;
+    font-weight: 400;
+  }
+
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    border-left: 2px solid var(--accent-saffron);
+    padding-left: 16px;
+  }
+
+  .hero-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--parchment);
+    line-height: 1;
+  }
+
+  .hero-stat .label {
+    font-size: 0.75rem;
+    color: #a09580;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  .hero-scroll {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: #a09580;
+    text-transform: uppercase;
+  }
+
+  .hero-scroll-line {
+    width: 60px;
+    height: 1px;
+    background: #a09580;
+  }
+
+  /* ─── EXPLAINER BAR ─────────────────────────────────────── */
+  .explainer {
+    background: var(--highlight);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 5vw;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .explainer-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .explainer p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .explainer strong { color: var(--ink); }
+
+  /* ─── NAV ──────────────────────────────────────────────── */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,247,242,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 5vw;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .sticky-nav::-webkit-scrollbar { display: none; }
+
+  .nav-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border: 1px solid transparent;
+    background: none;
+    cursor: pointer;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .nav-btn:hover, .nav-btn.active {
+    border-color: var(--accent-saffron);
+    color: var(--accent-saffron);
+    background: rgba(212,96,10,0.05);
+  }
+
+  /* ─── LAYOUT ────────────────────────────────────────────── */
+  .main-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5vw;
+  }
+
+  /* ─── SECTION HEADERS ───────────────────────────────────── */
+  .section-header {
+    padding: 60px 0 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--border);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .section-title-wrap {}
+
+  .section-kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  /* ─── CHART SECTION ─────────────────────────────────────── */
+  .chart-section {
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .chart-intro {
+    max-width: 700px;
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .chart-wrap {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+
+  .chart-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 160px;
+    padding-bottom: 30px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bar-group { display: flex; flex-direction: column; align-items: center; flex: 1; }
+
+  .bar {
+    width: 100%;
+    background: var(--accent-saffron);
+    opacity: 0.7;
+    border-radius: 2px 2px 0 0;
+    transition: opacity 0.2s;
+    position: relative;
+  }
+
+  .bar:hover { opacity: 1; }
+
+  .bar-val {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .bar-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--muted);
+    margin-top: 8px;
+    text-align: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    height: 30px;
+    overflow: hidden;
+  }
+
+  .chart-note {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  .global-compare {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .country-tile {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .country-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .country-pct {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .country-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-top: 6px;
+    overflow: hidden;
+  }
+
+  .country-fill {
+    height: 100%;
+    background: var(--accent-green);
+    border-radius: 2px;
+  }
+
+  .country-tile.india .country-pct { color: var(--accent-saffron); }
+  .country-tile.india .country-fill { background: var(--accent-saffron); }
+
+  /* ─── TIMELINE ──────────────────────────────────────────── */
+  .timeline-section {
+    padding-bottom: 80px;
+  }
+
+  .timeline-intro {
+    max-width: 700px;
+    margin-bottom: 48px;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-saffron), var(--border), var(--accent-green));
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: -47px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--warm-white);
+    border: 2px solid var(--accent-saffron);
+    transition: all 0.2s;
+  }
+
+  .tl-item.lapsed .tl-dot { border-color: var(--muted); }
+  .tl-item.passed .tl-dot { background: var(--accent-green); border-color: var(--accent-green); }
+  .tl-item.current .tl-dot {
+    background: var(--accent-saffron);
+    border-color: var(--accent-saffron);
+    box-shadow: 0 0 0 4px rgba(212,96,10,0.15);
+  }
+
+  .tl-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin: 8px 0 24px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .tl-card:hover { box-shadow: 0 4px 20px var(--shadow); }
+
+  .tl-card-header {
+    padding: 20px 24px 16px;
+    cursor: pointer;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .tl-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--border);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 80px;
+  }
+
+  .tl-item.current .tl-year { color: var(--accent-saffron); }
+  .tl-item.passed .tl-year { color: var(--accent-green); }
+
+  .tl-head-content { flex: 1; }
+
+  .tl-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
+  .badge-lapsed { background: #f0ede8; color: var(--muted); }
+  .badge-passed { background: #e8f4f0; color: var(--accent-green); }
+  .badge-active { background: #fff3e0; color: var(--accent-saffron); }
+  .badge-pending { background: #fef9ec; color: var(--accent-gold); }
+  .badge-milestone { background: var(--ink); color: var(--parchment); }
+
+  .tl-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .tl-summary {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .tl-expand-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--accent-saffron);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+  }
+
+  .tl-expand-btn::after {
+    content: '▼';
+    font-size: 0.5rem;
+    transition: transform 0.2s;
+  }
+
+  .tl-expand-btn.open::after { transform: rotate(180deg); }
+
+  .tl-detail {
+    display: none;
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    background: var(--parchment);
+  }
+
+  .tl-detail.open { display: block; }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .detail-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 16px;
+  }
+
+  .detail-box-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin-bottom: 10px;
+  }
+
+  .detail-box p {
+    font-size: 0.83rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .detail-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .detail-box ul li {
+    font-size: 0.83rem;
+    color: var(--ink);
+    line-height: 1.6;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .detail-box ul li:last-child { border-bottom: none; }
+
+  .detail-box ul li::before {
+    content: '→';
+    color: var(--accent-saffron);
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    margin-top: 2px;
+  }
+
+  .pullquote {
+    border-left: 3px solid var(--accent-saffron);
+    padding: 12px 20px;
+    margin: 16px 0;
+    background: var(--highlight);
+    border-radius: 0 3px 3px 0;
+  }
+
+  .pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .pullquote cite {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-top: 8px;
+    font-style: normal;
+  }
+
+  .source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--accent-green);
+    text-decoration: none;
+    border: 1px solid var(--accent-green);
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin: 4px 4px 4px 0;
+    transition: all 0.2s;
+  }
+
+  .source-link:hover {
+    background: var(--accent-green);
+    color: white;
+  }
+
+  /* ─── KEY PROVISIONS ─────────────────────────────────────── */
+  .provisions-section {
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .provisions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .provision-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px;
+    background: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .provision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-saffron);
+  }
+
+  .provision-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .provision-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .provision-text {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .provision-article {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--accent-saffron);
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+
+  /* ─── DEBATE SECTION ─────────────────────────────────────── */
+  .debate-section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 700px) {
+    .debate-grid { grid-template-columns: 1fr; }
+  }
+
+  .debate-col-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    margin-bottom: 12px;
+    border-radius: 2px;
+  }
+
+  .pro .debate-col-title { background: #e8f4f0; color: var(--accent-green); }
+  .con .debate-col-title { background: #fef0e8; color: #b85c2a; }
+
+  .debate-point {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.83rem;
+    line-height: 1.6;
+  }
+
+  .debate-point:last-child { border-bottom: none; }
+
+  .debate-icon { flex-shrink: 0; font-size: 0.9rem; margin-top: 2px; }
+
+  /* ─── 2026 SECTION ───────────────────────────────────────── */
+  .current-section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .alert-box {
+    background: var(--ink);
+    color: var(--parchment);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .alert-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+  .alert-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--parchment);
+  }
+
+  .alert-content p {
+    font-size: 0.85rem;
+    color: #c4b89a;
+    line-height: 1.6;
+  }
+
+  .bills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .bill-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    background: var(--card-bg);
+  }
+
+  .bill-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--accent-saffron);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .bill-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .bill-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .timeline-arrow {
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin-top: 24px;
+  }
+
+  .timeline-arrow h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .future-steps {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .step {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    padding: 0 12px;
+    position: relative;
+  }
+
+  .step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .step-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--accent-saffron);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .step-label {
+    font-size: 0.78rem;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .step.done .step-date { color: var(--accent-green); }
+  .step.done .step-label { color: var(--muted); }
+  .step.pending .step-date { color: var(--accent-gold); }
+
+  /* ─── DOCUMENTS ──────────────────────────────────────────── */
+  .docs-section {
+    padding: 60px 0;
+  }
+
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .doc-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    background: var(--card-bg);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+  }
+
+  .doc-card:hover {
+    border-color: var(--accent-saffron);
+    box-shadow: 0 4px 16px var(--shadow);
+  }
+
+  .doc-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  .doc-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin-bottom: 4px;
+  }
+
+  .doc-title {
+    font-weight: 500;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .doc-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────────────── */
+  footer {
+    background: var(--ink);
+    color: #a09580;
+    padding: 40px 5vw;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    border-top: 3px solid var(--accent-saffron);
+  }
+
+  footer strong { color: var(--parchment); }
+
+  footer a { color: var(--accent-saffron); }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .debate-grid { grid-template-columns: 1fr; }
+  }
+
+  .footer-sources h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    margin-bottom: 12px;
+  }
+
+  .footer-sources ol {
+    padding-left: 20px;
+  }
+
+  .footer-sources li { margin-bottom: 6px; }
+
+  /* ─── RESPONSIVE ─────────────────────────────────────────── */
+  @media (max-width: 700px) {
+    .tl-card-header { flex-direction: column; gap: 8px; }
+    .tl-year { font-size: 1.4rem; min-width: auto; }
+    .section-header { flex-direction: column; gap: 4px; }
+    .section-num { font-size: 3rem; }
+    .hero-meta { gap: 24px; }
+    .detail-grid { grid-template-columns: 1fr !important; }
+    .provisions-grid { grid-template-columns: 1fr !important; }
+    .bills-grid { grid-template-columns: 1fr !important; }
+    .docs-grid { grid-template-columns: 1fr !important; }
+    .global-compare { grid-template-columns: repeat(3, 1fr) !important; }
+    .debate-grid { grid-template-columns: 1fr !important; }
+    .footer-grid { grid-template-columns: 1fr !important; }
+    /* All inline two-col grids used in section 5 */
+    [style*="grid-template-columns:1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+    /* Hero layout stacks on small screens */
+    .hero > div[style*="display:flex"] {
+      flex-direction: column !important;
+    }
+    /* Parliament graphic: constrain width */
+    #parliament-dots svg { max-width: 100%; }
+    /* Timeline indentation reduced */
+    .timeline { padding-left: 28px; }
+    .tl-dot { left: -35px; }
+    /* Prevent horizontal overflow */
+    .main-wrap { padding: 0 4vw; }
+    .hero { padding: 48px 5vw 40px; }
+    .tl-detail { padding: 16px; }
+    /* Section 5 dark explainer box grids */
+    .current-section > div[style*="display:grid"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  /* ─── MOBILE UTILITY ────────────────────────────────────────── */
+  .col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 700px) {
+    .col2 { grid-template-columns: 1fr !important; }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tl-card { animation: fadeUp 0.4s ease both; }
+
+  .tl-item:nth-child(1) .tl-card { animation-delay: 0.05s; }
+  .tl-item:nth-child(2) .tl-card { animation-delay: 0.1s; }
+  .tl-item:nth-child(3) .tl-card { animation-delay: 0.15s; }
+  .tl-item:nth-child(4) .tl-card { animation-delay: 0.2s; }
+  .tl-item:nth-child(5) .tl-card { animation-delay: 0.25s; }
+  .tl-item:nth-child(6) .tl-card { animation-delay: 0.3s; }
+  .tl-item:nth-child(7) .tl-card { animation-delay: 0.35s; }
+  .tl-item:nth-child(8) .tl-card { animation-delay: 0.4s; }
+  .tl-item:nth-child(9) .tl-card { animation-delay: 0.45s; }
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-label">A Constitutional History · 1946–2026</div>
+  <div style="display:flex; align-items:flex-start; gap:40px; flex-wrap:wrap;">
+    <div style="flex:1; min-width:260px;">
+      <h1>Nari Shakti:<br><em>The Long Road</em><br>to Women's<br>Reservation<br>in Parliament</h1>
+      <p class="hero-sub">How India's promise of one-third representation for women in Parliament travelled from a post-Independence aspiration to a constitutional amendment — and why the journey is not over yet.</p>
+    </div>
+    <div style="flex-shrink:0; padding-top:8px; min-width:260px; max-width:300px; width:100%;">
+      <div style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:#a09580; margin-bottom:12px;">18th Lok Sabha · 543 seats</div>
+      <div id="parliament-dots" style="line-height:0; width:100%; max-width:280px;"></div>
+      <div style="display:flex; gap:14px; margin-top:10px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:6px;">
+          <div style="width:9px;height:9px;border-radius:50%;background:#e05252;flex-shrink:0;"></div>
+          <span style="font-family:'DM Mono',monospace;font-size:0.58rem;color:#a09580;">Women MPs — 74</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <div style="width:9px;height:9px;border-radius:50%;background:#e8948a;opacity:0.7;flex-shrink:0;"></div>
+          <span style="font-family:'DM Mono',monospace;font-size:0.58rem;color:#a09580;">Gap to 33% target — 107 more</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <div style="width:9px;height:9px;border-radius:50%;background:#6a5f50;opacity:0.5;flex-shrink:0;"></div>
+          <span style="font-family:'DM Mono',monospace;font-size:0.58rem;color:#a09580;">Men MPs — 469</span>
+        </div>
+      </div>
+      <div style="font-family:'DM Mono',monospace;font-size:0.55rem;color:#6a6050;margin-top:5px;">Each dot = 1 MP</div>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-stat">
+      <div class="num">27 yrs</div>
+      <div class="label">From first bill (1996) to passage (2023)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">4</div>
+      <div class="label">Bills introduced, lapsed before 2023</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">15%</div>
+      <div class="label">Women in Lok Sabha (17th, 2019)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">33%</div>
+      <div class="label">Reservation mandated by the 2023 Act</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- ─── EXPLAINER ─────────────────────────────────────────── -->
+<div class="explainer">
+  <div class="explainer-icon">ℹ️</div>
+  <p>This page is written for <strong>general readers</strong> and <strong>researchers</strong>. Each timeline card has a short summary — click <em>"Read full analysis"</em> to expand detailed provisions, key debates, and primary source links.</p>
+</div>
+
+<!-- ─── NAV ──────────────────────────────────────────────── -->
+<nav class="sticky-nav">
+  <button class="nav-btn" onclick="scrollTo('data-section')">📊 The Data</button>
+  <button class="nav-btn" onclick="scrollTo('timeline-section')">📜 Timeline</button>
+  <button class="nav-btn" onclick="scrollTo('provisions-section')">⚖️ The 2023 Act</button>
+  <button class="nav-btn" onclick="scrollTo('debate-section')">🗣️ Key Debates</button>
+  <button class="nav-btn" onclick="scrollTo('current-section')">🔴 2026: Bill Fails</button>
+  <button class="nav-btn" onclick="scrollTo('docs-section')">📂 Documents</button>
+</nav>
+
+<!-- ─── MAIN ──────────────────────────────────────────────── -->
+<div class="main-wrap">
+
+  <!-- ─── DATA ───────────────────────────────────────────── -->
+  <div id="data-section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">Why Reservation?</div>
+        <div class="section-title">The Representation Gap</div>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <p class="chart-intro">Women constitute roughly half of India's population, but have never held more than 15% of Lok Sabha seats. The gap between democratic promise and political reality is what the Women's Reservation Act seeks to address.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-title">% Women MPs — Lok Sabha (1st to 17th)</div>
+        <div class="bar-chart" id="lsChart"></div>
+        <p class="chart-note">Source: PRS Legislative Research, Vital Stats — Women in Parliament and State Assemblies (September 2023)</p>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-title">International Comparison — % Women in National Legislature (as of 2023)</div>
+        <div class="global-compare">
+          <div class="country-tile"><div class="country-name">Sweden</div><div class="country-pct">46%</div><div class="country-bar"><div class="country-fill" style="width:92%"></div></div></div>
+          <div class="country-tile"><div class="country-name">Norway</div><div class="country-pct">46%</div><div class="country-bar"><div class="country-fill" style="width:92%"></div></div></div>
+          <div class="country-tile"><div class="country-name">S. Africa</div><div class="country-pct">45%</div><div class="country-bar"><div class="country-fill" style="width:90%"></div></div></div>
+          <div class="country-tile"><div class="country-name">Australia</div><div class="country-pct">38%</div><div class="country-bar"><div class="country-fill" style="width:76%"></div></div></div>
+          <div class="country-tile"><div class="country-name">UK</div><div class="country-pct">35%</div><div class="country-bar"><div class="country-fill" style="width:70%"></div></div></div>
+          <div class="country-tile"><div class="country-name">USA</div><div class="country-pct">29%</div><div class="country-bar"><div class="country-fill" style="width:58%"></div></div></div>
+          <div class="country-tile"><div class="country-name">Bangladesh</div><div class="country-pct">21%</div><div class="country-bar"><div class="country-fill" style="width:42%"></div></div></div>
+          <div class="country-tile india"><div class="country-name">India ◀</div><div class="country-pct">15%</div><div class="country-bar"><div class="country-fill" style="width:30%"></div></div></div>
+          <div class="country-tile"><div class="country-name">Japan</div><div class="country-pct">10%</div><div class="country-bar"><div class="country-fill" style="width:20%"></div></div></div>
+        </div>
+        <p class="chart-note">Source: Inter-Parliamentary Union; PRS Vital Stats 2023. India ranked among the lowest for a major democracy.</p>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-title">State Assemblies: % Women MLAs (2023)</div>
+        <p style="font-size:0.85rem; color:var(--muted); margin-bottom:12px;">On average, women hold only <strong>9% of state assembly seats</strong>. No state had more than 20%. Chhattisgarh had the highest at 18%; Mizoram had zero women MLAs.</p>
+        <div class="detail-box">
+          <ul>
+            <li>Chhattisgarh — 18% (highest in the country)</li>
+            <li>West Bengal — 14%</li>
+            <li>Rajasthan — 14%</li>
+            <li>Odisha — 12%</li>
+            <li>Bihar — 12%</li>
+            <li>Himachal Pradesh — 1 woman MLA total</li>
+            <li>Mizoram — 0% women MLAs</li>
+          </ul>
+        </div>
+        <p class="chart-note">Source: PRS Vital Stats 2023. Women candidates who do contest are as likely to win as men — the barrier is at the nomination stage, not the ballot box.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── TIMELINE ────────────────────────────────────────── -->
+  <div id="timeline-section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">A 77-Year Journey</div>
+        <div class="section-title">The Timeline</div>
+      </div>
+    </div>
+    <p class="timeline-intro">From the Constituent Assembly's first debates to the current 2026 delimitation bills — nine turning points that define India's struggle to guarantee women's political representation.</p>
+
+    <div class="timeline">
+
+      <!-- 1946 -->
+      <div class="tl-item lapsed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">1946</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-milestone">Origin</span>
+              <div class="tl-headline">The Constituent Assembly: One Woman in the Room</div>
+              <p class="tl-summary">When the Constituent Assembly convened to write India's Constitution, Sarojini Naidu was the only woman present in the founding session. The question of reserving seats for women in Parliament was debated — and rejected — by the framers.</p>
+              <button class="tl-expand-btn">Read full analysis</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">What Happened</div>
+                <p>The Constituent Assembly debated whether women should have reserved seats in Parliament, similar to the reservations being created for Scheduled Castes and Scheduled Tribes. The proposal was ultimately rejected. The framers chose to give women equal voting rights and the right to contest from any constituency — but no guaranteed seats.</p>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">The Reasoning</div>
+                <ul>
+                  <li>Women had equal citizenship and voting rights — formal equality was deemed sufficient</li>
+                  <li>Concerns that reserved seats might be seen as diminishing women's capability</li>
+                  <li>SC/ST reservation was justified by caste-based exclusion; gender was treated differently</li>
+                  <li>Many women members themselves opposed separate reservation</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pullquote">
+              <p>The irony that one of India's greatest women leaders — Sarojini Naidu — was the sole woman in the founding session became a symbol of the contradiction at the heart of Indian democracy: a Constitution that promised equality but produced profoundly unequal representation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1993 -->
+      <div class="tl-item passed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">1992–93</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-passed">Enacted</span>
+              <div class="tl-headline">The 73rd &amp; 74th Amendments: The Precedent Is Set</div>
+              <p class="tl-summary">Parliament passed the Constitution (73rd Amendment) Act, 1992 and the Constitution (74th Amendment) Act, 1992 — both coming into force in 1993 (24 April and 1 June respectively). These amendments mandated one-third reservation for women in panchayats and urban local bodies, creating the world's largest experiment in democratic gender representation, and establishing the template that would later be applied to Parliament itself.</p>
+              <button class="tl-expand-btn">Read full analysis</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">What Was Enacted</div>
+                <ul>
+                  <li>Constitution (73rd Amendment) Act, 1992 (in force 24 April 1993) — Article 243D(3): not less than 1/3 of panchayat seats reserved for women</li>
+                  <li>Constitution (74th Amendment) Act, 1992 (in force 1 June 1993) — Article 243T: not less than 1/3 of municipality seats reserved for women</li>
+                  <li>Within SC/ST reserved seats, 1/3 further reserved for women of those communities</li>
+                  <li>Reserved seats rotate among constituencies in each panchayat</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">What It Proved</div>
+                <ul>
+                  <li>By 2009, over 1 million women held elected office in local bodies — more than any other country</li>
+                  <li>Women's actual representation reached 42.3% — beyond the mandated 33%</li>
+                  <li>Early fears of "proxy" women (nagging wives ruling in name only) proved largely unfounded</li>
+                  <li>Studies showed women prioritised water, sanitation, schools — changing local policy outcomes</li>
+                  <li>The Rajiv Gandhi-era vision became the strongest argument for extending reservation upward</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pullquote">
+              <p>The Standing Committee's 2009 report credited "the vision of former Prime Minister Shri Rajiv Gandhi" for the panchayat reservation concept — though the Acts themselves were introduced and passed under P.V. Narasimha Rao's government in 1992. Whatever its political parentage, the panchayat experiment became the single strongest empirical argument for extending reservation upward to Parliament.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1996 -->
+      <div class="tl-item lapsed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">1996</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-lapsed">Lapsed</span>
+              <div class="tl-headline">The 81st Amendment Bill: First Attempt, First Failure</div>
+              <p class="tl-summary">The Constitution (81st Amendment) Bill was introduced in the 11th Lok Sabha — the first formal attempt to reserve parliamentary seats for women. It was referred to a Joint Committee chaired by Geeta Mukherjee, whose 1996 report remains a foundational document. The bill lapsed when the Lok Sabha was dissolved.</p>
+              <button class="tl-expand-btn">Read full analysis</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">The Geeta Mukherjee Committee Recommendations (1996)</div>
+                <ul>
+                  <li>One-third reservation of parliamentary seats for women — supported</li>
+                  <li>Reservation should last 15 years, then be reviewed</li>
+                  <li>OBC women should be considered for sub-reservation "at appropriate time"</li>
+                  <li>Reservation should be considered for Rajya Sabha and Legislative Councils</li>
+                  <li>Committee agreed the bill was necessary — but lapsed before a vote</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">Why It Failed</div>
+                <ul>
+                  <li>The 11th Lok Sabha was dissolved before the bill could be voted on</li>
+                  <li>Fundamentally a timing failure, not a rejection</li>
+                  <li>OBC sub-quota demand from parties like SP and RJD was beginning to emerge as a flashpoint</li>
+                  <li>No cross-party whip or coalition agreement existed</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1998–1999 -->
+      <div class="tl-item lapsed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">1998–99</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-lapsed">Lapsed × 2</span>
+              <div class="tl-headline">The 84th &amp; 85th Amendment Bills: Parliament in Uproar</div>
+              <p class="tl-summary">Two more bills were introduced in successive Lok Sabhas — and both lapsed on dissolution. These debates were marked by dramatic scenes: MPs from regional parties tore up copies of the bill on the floor of the House, physically disrupted proceedings, and demanded an OBC sub-quota within the women's quota as a condition of support.</p>
+              <button class="tl-expand-btn">Read full analysis</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">The OBC Flashpoint</div>
+                <p>Parties led by Mulayam Singh Yadav (SP) and Laloo Prasad Yadav (RJD) argued that without a sub-quota for Other Backward Class women, the bill would primarily benefit upper-caste women. This "quota within quota" demand became the central political deadlock — one that would persist through 2023.</p>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">The Gill Formula Alternative</div>
+                <p>The Election Commission proposed requiring political parties to nominate a minimum percentage of women candidates (the "Gill Formula"). This was widely rejected — critics argued parties would nominate women only in unwinnable seats, making the provision cosmetic.</p>
+              </div>
+            </div>
+            <div class="pullquote">
+              <p>Former Uttar Pradesh Chief Minister Mulayam Singh Yadav suggested in 2010 that the bill should not be enacted, citing concerns that it would encourage male parliamentarians to engage in inappropriate behaviour toward female colleagues — a statement widely condemned.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2008–2014 -->
+      <div class="tl-item lapsed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">2008–14</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-lapsed">Passed Rajya Sabha, Lapsed in Lok Sabha</span>
+              <div class="tl-headline">The 108th Amendment: Closest Miss</div>
+              <p class="tl-summary">The Constitution (108th Amendment) Bill was introduced in the Rajya Sabha in May 2008 under the UPA government. After a two-year Standing Committee examination, it was passed by the Rajya Sabha in March 2010 — the first time either House passed such a bill. But the Lok Sabha never voted on it, and it lapsed in 2014 when the 15th Lok Sabha was dissolved.</p>
+              <button class="tl-expand-btn">Read full analysis</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">Key Provisions of the 108th Amendment Bill</div>
+                <ul>
+                  <li>1/3 reservation in Lok Sabha and all state legislative assemblies</li>
+                  <li>Quota-within-quota for SC/ST women within the reserved seats</li>
+                  <li>Reservation for 15 years, then reviewable</li>
+                  <li>Reserved seats to rotate after each general election</li>
+                  <li>No OBC sub-quota (this was the core political controversy)</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">The 36th Standing Committee Report (2009)</div>
+                <ul>
+                  <li>Chaired by Jayanthi Natarajan (INC)</li>
+                  <li>Conducted 14 sittings; visited 10 states; heard NGOs, parties, state governments</li>
+                  <li>Unanimous: reservation is "a valid and necessary strategy"</li>
+                  <li>Rejected double-member constituencies — would make women "second class MPs"</li>
+                  <li>Opposed leaving nomination to parties — would produce only "losing seats"</li>
+                  <li>Minority note from SP/RJD members: demanded OBC sub-quota</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pullquote">
+              <p>The Committee concluded: "The Women's Reservation Bill should be passed in Parliament and put in action without further delay." More than 12 years had elapsed since the Geeta Mukherjee Committee's report — and another 13 would pass before that finally happened.</p>
+              <cite>— 36th Report, Standing Committee on Personnel, Public Grievances, Law and Justice (December 2009)</cite>
+            </div>
+            <div style="margin-top:16px;">
+              <a class="source-link" href="https://prsindia.org/files/bills_acts/bills_parliament/2008/scr_Women_Reservation_Bill_2009.pdf" target="_blank">📄 Read: 36th Standing Committee Report (2009)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sept 2023 -->
+      <div class="tl-item passed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">Sep 2023</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-passed">Passed Both Houses</span>
+              <div class="tl-headline">The Nari Shakti Vandan Adhiniyam: Parliament Finally Votes</div>
+              <p class="tl-summary">On September 19, 2023 — the first day of business in the new Parliament building — the Modi government introduced the Constitution (128th Amendment) Bill. It passed Lok Sabha on September 20 with <strong>454 votes in favour and 2 against</strong>, and Rajya Sabha on September 21 with <strong>214 votes in favour and none against</strong>. President Droupadi Murmu signed it into law on September 28, 2023, making it the Constitution's 106th Amendment. But a critical condition was embedded: the reservation would only activate after a new census and delimitation exercise.</p>
+              <button class="tl-expand-btn">Read full analysis</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">What the Act Does</div>
+                <ul>
+                  <li>Inserts Article 330A — reserves seats for women in Lok Sabha</li>
+                  <li>Inserts Article 332A — reserves seats in every State Assembly</li>
+                  <li>Inserts Article 239AA amendment — covers Delhi assembly</li>
+                  <li>Inserts Article 334A — the commencement condition</li>
+                  <li>One-third of SC/ST seats also reserved for women of those communities</li>
+                  <li>15-year sunset clause, extendable by Parliament</li>
+                  <li>Seats rotate after each delimitation exercise</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">The Commencement Condition (Article 334A)</div>
+                <p>The reservation provisions "shall come into effect after an exercise of delimitation is undertaken for this purpose after the relevant figures for the first census taken after commencement of the Constitution (One Hundred and Sixth Amendment) Act, 2023 have been published."</p>
+                <p style="margin-top:10px; font-weight:500; color:var(--accent-saffron);">In plain language: the reservation cannot begin until India completes a Census and then a Delimitation exercise based on that Census data.</p>
+              </div>
+            </div>
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">Political Context</div>
+                <ul>
+                  <li>Introduced in the first session of the new Parliament building — symbolic timing</li>
+                  <li>Near-unanimous support: BJP, INC, and most regional parties voted in favour</li>
+                  <li>OBC sub-quota demand was not included — same sticking point as 2008</li>
+                  <li>Opposition questioned sincerity: census condition meant no reservation before 2029 at earliest</li>
+                  <li>Home Minister Amit Shah assured: census and delimitation would proceed after 2024 elections</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">What It Does NOT Do</div>
+                <ul>
+                  <li>No reservation in Rajya Sabha or state Legislative Councils</li>
+                  <li>No OBC sub-quota within women's quota</li>
+                  <li>Does not specify which constituencies will be reserved — left to delimitation</li>
+                  <li>Does not fix a commencement date — contingent on census and delimitation</li>
+                  <li>Does not apply to currently sitting Houses until dissolution</li>
+                </ul>
+              </div>
+            </div>
+            <div style="margin-top:16px;">
+              <a class="source-link" href="https://prsindia.org/billtrack/the-constitution-one-hundred-twenty-eighth-amendment-bill-2023" target="_blank">📄 PRS Bill Track: 128th Amendment Bill</a>
+              <a class="source-link" href="https://egazette.gov.in" target="_blank">📄 Official Gazette (106th Amendment Act)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sept 28, 2023 -->
+      <div class="tl-item passed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">28 Sep 2023</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-passed">Enacted</span>
+              <div class="tl-headline">Presidential Assent &amp; Gazette Notification: The 106th Amendment</div>
+              <p class="tl-summary">President Droupadi Murmu signed the bill and the Official Gazette notification was published the same day — formally making women's reservation a constitutional right. The bill became the Constitution (One Hundred and Sixth Amendment) Act, 2023. Implementation remained contingent on census and delimitation.</p>
+              <button class="tl-expand-btn">Read full analysis</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-box" style="max-width:600px;">
+              <div class="detail-box-title">The Constitutional Articles Inserted</div>
+              <ul>
+                <li><strong>Article 330A</strong> — Reservation of seats for women in the House of the People (Lok Sabha)</li>
+                <li><strong>Article 332A</strong> — Reservation of seats for women in the Legislative Assembly of every State</li>
+                <li><strong>Article 239AA (amended)</strong> — Clauses (ba), (bb), (bc) added for Delhi Legislative Assembly reservation</li>
+                <li><strong>Article 334A</strong> — Governs when reservation takes effect: after delimitation following publication of Census figures; 15-year sunset; rotation after each delimitation</li>
+              </ul>
+            </div>
+            <p style="font-size:0.83rem; color:var(--muted); margin-top:16px;">The gazette notification also clarified that the amendments shall not affect the composition of any existing House until that House is dissolved — meaning the 17th Lok Sabha (2019–2024) continued without any reserved seats.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2025–early 2026 -->
+      <div class="tl-item current">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">2025–26</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-pending">Unfolding</span>
+              <div class="tl-headline">The Census Is Announced — But the Deadline Shifts</div>
+              <p class="tl-summary">The 2021 Census was delayed by COVID. In June 2025, the government notified Census 2027 with a reference date of March 1, 2027. This meant delimitation based on Census 2027 data could not realistically be completed before the 2029 Lok Sabha elections — making it virtually certain the reservation would not apply in 2029 either.</p>
+              <button class="tl-expand-btn">Read full analysis</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">The Timeline Problem</div>
+                <ul>
+                  <li>Census 2021 postponed due to COVID-19 pandemic</li>
+                  <li>Census 2027 notified in Gazette on June 4, 2025 (reference date: March 1, 2027)</li>
+                  <li>The 2023 Act requires delimitation based on "the first census after commencement"</li>
+                  <li>Last Delimitation Commission (2002) took 6 years to complete its work</li>
+                  <li>2029 Lok Sabha elections would arrive before any 2027 Census-based delimitation could finish</li>
+                  <li>Result: reservation effectively deferred to 2034 elections at earliest</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">Political Pressure</div>
+                <ul>
+                  <li>Opposition parties accused government of "jumla" (hollow promise) in 2023</li>
+                  <li>PM Modi published op-ed on April 9, 2026 urging urgency on women's representation</li>
+                  <li>Pressure mounted to delink reservation from Census 2027 and use older data</li>
+                  <li>Three new bills were introduced in Parliament on April 16, 2026</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- April 2026 -->
+      <div class="tl-item lapsed">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-header" onclick="toggleDetail(this)">
+            <div class="tl-year">Apr 2026</div>
+            <div class="tl-head-content">
+              <span class="tl-badge badge-lapsed">Defeated in Lok Sabha</span>
+              <div class="tl-headline">The 131st Amendment Bills: Introduced, Debated, Defeated</div>
+              <p class="tl-summary">On April 16, 2026, three bills were introduced in a special parliamentary session to expand Lok Sabha to 850 seats, base delimitation on the 2011 Census, and activate women's reservation for 2029. On April 17, the 131st Amendment Bill was put to a vote — and defeated. With 298 votes in favour and 230 against (out of 528 members), the government fell short of the 352 required for a two-thirds majority. The Delimitation Bill was then withdrawn. This was the first time a constitutional amendment brought by the Modi government failed in the Lok Sabha. Women's reservation under the 2023 Act remains on the books — but still cannot activate without a delimitation exercise.</p>
+              <button class="tl-expand-btn">Read full analysis</button>
+            </div>
+          </div>
+          <div class="tl-detail">
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">The Three Bills (April 16–17, 2026)</div>
+                <ul>
+                  <li><strong>Constitution (131st Amendment) Bill</strong> — Would have expanded Lok Sabha maximum from 550 to 850 seats (815 from states + 35 from UTs); reverted to population-proportional delimitation; gave Parliament authority to choose which census is used; amended Article 334A to delink women's reservation from Census 2027</li>
+                  <li><strong>Delimitation Bill, 2026</strong> — Would have constituted a Delimitation Commission to use 2011 Census data (the latest published census)</li>
+                  <li><strong>Union Territories Laws (Amendment) Bill, 2026</strong> — Applied parallel changes to Puducherry, Delhi, and J&amp;K assemblies</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">Why It Failed — The Vote</div>
+                <ul>
+                  <li>Constitutional amendment requires 2/3 of members present and voting (Article 368)</li>
+                  <li>528 members present — needed 352 votes to pass</li>
+                  <li>Result: 298 in favour, 230 against — fell short by 54 votes</li>
+                  <li>Opposition (INDIA alliance) voted against as a bloc</li>
+                  <li>Southern state parties (DMK, Congress, TMC) opposed: feared population-based reallocation would reduce their seats in a larger House</li>
+                  <li>Government withdrew the Delimitation Bill after the constitutional amendment fell</li>
+                  <li>First Modi government constitutional amendment to fail in Lok Sabha</li>
+                </ul>
+              </div>
+            </div>
+            <div class="detail-grid">
+              <div class="detail-box">
+                <div class="detail-box-title">Opposition Arguments</div>
+                <ul>
+                  <li>Population-based delimitation would punish southern states for successful family planning — Tamil Nadu would drop from 39 to ~32 seats, Kerala from 20 to ~15</li>
+                  <li>Women's reservation should be delinked from delimitation entirely, not made contingent on a contested seat-expansion exercise</li>
+                  <li>2023 Act was passed unanimously — the new bills added controversial elements that had nothing to do with women's reservation</li>
+                  <li>Government framed opposition as "against women" — opposition rejected characterisation, noting they had voted for the 2023 Act</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-title">Where Things Stand After Defeat</div>
+                <ul>
+                  <li>The 106th Amendment (Nari Shakti Vandan Adhiniyam) was officially notified as in force from April 16, 2026</li>
+                  <li>However, Article 334A still ties reservation's activation to delimitation after a census — that trigger has not changed</li>
+                  <li>With the 2026 bills defeated, women's reservation cannot realistically apply to the 2029 Lok Sabha elections</li>
+                  <li>Earliest likely implementation: 2034, pending Census 2027 completion and a fresh delimitation process</li>
+                  <li>Government may bring revised bills in a future session</li>
+                </ul>
+              </div>
+            </div>
+            <div style="margin-top:16px;">
+              <a class="source-link" href="https://prsindia.org/billtrack/the-constitution-131st-amendment-bill-2026" target="_blank">📄 PRS Bill Track: 131st Amendment Bill 2026</a>
+              <a class="source-link" href="https://www.livelaw.in/top-stories/lok-sabha-rejects-constitution-131st-bill-2026-on-delimitation-530736" target="_blank">📄 LiveLaw: Lok Sabha Rejects 131st Amendment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end timeline -->
+  </div>
+
+  <!-- ─── PROVISIONS ────────────────────────────────────────── -->
+  <div id="provisions-section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">The 106th Amendment Act</div>
+        <div class="section-title">What the Law Says</div>
+      </div>
+    </div>
+
+    <div class="provisions-section">
+      <p style="max-width:700px; font-size:0.9rem; color:var(--muted); margin-bottom:0;">The Constitution (One Hundred and Sixth Amendment) Act, 2023 — formally the Nari Shakti Vandan Adhiniyam — inserts four new constitutional provisions. Here is what each does, in plain language.</p>
+      <div class="provisions-grid">
+        <div class="provision-card">
+          <div class="provision-icon">🏛️</div>
+          <div class="provision-title">Lok Sabha Reservation</div>
+          <p class="provision-text">One-third of all Lok Sabha seats shall be reserved for women. Within the seats already reserved for Scheduled Castes and Scheduled Tribes, one-third must go to women of those communities.</p>
+          <div class="provision-article">Article 330A</div>
+        </div>
+        <div class="provision-card">
+          <div class="provision-icon">🏢</div>
+          <div class="provision-title">State Assembly Reservation</div>
+          <p class="provision-text">One-third of all seats in every State Legislative Assembly shall be reserved for women — with the same SC/ST sub-quota. This applies to all 28 states and the NCT of Delhi.</p>
+          <div class="provision-article">Article 332A + 239AA</div>
+        </div>
+        <div class="provision-card">
+          <div class="provision-icon">⏳</div>
+          <div class="provision-title">Commencement Condition</div>
+          <p class="provision-text">The reservation only takes effect after: (1) the first census conducted after the Act's commencement is published; AND (2) a delimitation exercise is completed based on that census. This is the critical conditionality now being renegotiated.</p>
+          <div class="provision-article">Article 334A(1)</div>
+        </div>
+        <div class="provision-card">
+          <div class="provision-icon">📅</div>
+          <div class="provision-title">15-Year Sunset Clause</div>
+          <p class="provision-text">The reservation will automatically lapse 15 years from the date of commencement — but Parliament may extend it by passing a law. This mirrors the SC/ST reservation sunset model, though SC/ST reservation has been extended repeatedly since 1950.</p>
+          <div class="provision-article">Article 334A(1)</div>
+        </div>
+        <div class="provision-card">
+          <div class="provision-icon">🔄</div>
+          <div class="provision-title">Rotation of Seats</div>
+          <p class="provision-text">The specific constituencies designated as "women-reserved" will rotate after each delimitation exercise. Parliament will pass a law determining how rotation works. This prevents any constituency from being permanently reserved.</p>
+          <div class="provision-article">Article 334A(3)</div>
+        </div>
+        <div class="provision-card">
+          <div class="provision-icon">🛡️</div>
+          <div class="provision-title">No Retrospective Effect</div>
+          <p class="provision-text">The amendment does not disturb any existing House of the People, State Assembly, or Delhi Assembly until that House is dissolved through the normal electoral cycle. The 17th Lok Sabha continued unchanged until its dissolution in 2024.</p>
+          <div class="provision-article">Article 334A(4) + Section 6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── DEBATE ─────────────────────────────────────────────── -->
+  <div id="debate-section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">Contested Territory</div>
+        <div class="section-title">The Core Debates</div>
+      </div>
+    </div>
+
+    <div class="debate-section">
+      <p style="max-width:700px; font-size:0.9rem; color:var(--muted); margin-bottom:8px;">These are not simple questions. The debates around women's reservation have engaged constitutional lawyers, political theorists, women's organisations, and parties across the spectrum for three decades. Here are the strongest arguments on both sides, drawn from the parliamentary record.</p>
+
+      <div class="debate-grid">
+        <div class="pro">
+          <div class="debate-col-title">Arguments For Reservation</div>
+          <div class="debate-point"><span class="debate-icon">✅</span><span>Women constitute 50% of the population but less than 15% of Parliament. Without structural intervention, informal barriers — patriarchal party structures, male incumbency advantage, lack of campaign financing — will perpetuate this gap indefinitely.</span></div>
+          <div class="debate-point"><span class="debate-icon">✅</span><span>The panchayat experience (post-1993) proves it works: women proved capable legislators; "proxy" fears were unfounded; actual representation exceeded the mandated quota; women prioritised different policy issues than male legislators.</span></div>
+          <div class="debate-point"><span class="debate-icon">✅</span><span>Article 15(3) of the Constitution explicitly permits the state to make special provisions for women. Reservation is constitutionally valid, not a deviation from equality — it corrects systemic disadvantage.</span></div>
+          <div class="debate-point"><span class="debate-icon">✅</span><span>International evidence: countries with legislative gender quotas achieve higher women's representation faster. India ranked among the lowest major democracies — below Bangladesh and Brazil — as of 2023.</span></div>
+          <div class="debate-point"><span class="debate-icon">✅</span><span>Leaving nomination to political parties (the Gill Formula) fails — parties give women unwinnable seats. Constitutional mandate is the only reliable route.</span></div>
+        </div>
+        <div class="con">
+          <div class="debate-col-title">Arguments Against / Critiques</div>
+          <div class="debate-point"><span class="debate-icon">⚠️</span><span>Without OBC sub-quotas, the bill will primarily benefit upper-caste and urban women. The argument: gender alone is an insufficient category; class and caste must be addressed within the quota for genuine representation of all women. (Core demand of SP, RJD, and allied parties)</span></div>
+          <div class="debate-point"><span class="debate-icon">⚠️</span><span>Rotation of reserved constituencies prevents legislators from building long-term constituency relationships. A woman elected from a reserved seat may find the seat unreserved next election — undermining accountability.</span></div>
+          <div class="debate-point"><span class="debate-icon">⚠️</span><span>Seat reservation restricts voter choice in reserved constituencies — voters cannot elect a man even if they prefer to. Some argue party-level quotas or dual-member constituencies are less coercive alternatives.</span></div>
+          <div class="debate-point"><span class="debate-icon">⚠️</span><span>Symbolic passage with delayed implementation. The 2023 Act's Census-delimitation conditionality effectively deferred implementation to 2034+. Critics called it an "election jumla" — a promise with no delivery mechanism.</span></div>
+          <div class="debate-point"><span class="debate-icon">⚠️</span><span>Numerical presence ≠ substantive representation. Research shows women sarpanches (village heads) from marginalised communities often face barriers to actual decision-making despite holding office. Entry is necessary but not sufficient.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 2026 ────────────────────────────────────────────────── -->
+  <div id="current-section">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">April 2026 · Outcome</div>
+        <div class="section-title">Two Debates, One Bill: Understanding What Actually Failed</div>
+      </div>
+    </div>
+
+    <div class="current-section">
+
+      <!-- THE KEY EXPLAINER: Separating the two debates -->
+      <div style="background:var(--ink); color:var(--parchment); border-radius:4px; padding:28px 32px; margin-bottom:32px;">
+        <div style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent-saffron); margin-bottom:16px;">⚠ Critical Distinction — Read This First</div>
+        <div class="col2" style="margin-bottom:20px;">
+          <div style="padding-right:4px;">
+            <div style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--parchment); margin-bottom:10px;">Debate A: Women's Reservation ✓ Settled</div>
+            <p style="font-size:0.83rem; color:#c4b89a; line-height:1.65;">Should Parliament reserve one-third of seats for women? This was debated from 1996 to 2023. It was settled <strong style="color:var(--parchment);">near-unanimously</strong> by the <strong style="color:var(--parchment);">Constitution (106th Amendment) Act, 2023</strong>. Both the ruling party and the full opposition voted for it. This debate is constitutionally closed.</p>
+          </div>
+          <div>
+            <div style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--parchment); margin-bottom:10px;">Debate B: Delimitation &amp; Seat Expansion ✗ Ongoing</div>
+            <p style="font-size:0.83rem; color:#c4b89a; line-height:1.65;">Should India expand Lok Sabha from 543 to 850 seats? Should seat allocation shift to population-proportional basis — reducing southern states' share? Who controls the timing of delimitation? This is a <strong style="color:var(--parchment);">separate, older constitutional question</strong> that predates women's reservation by decades.</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #3a3225; padding-top:16px;">
+          <p style="font-size:0.85rem; color:#c4b89a; line-height:1.65;"><strong style="color:var(--accent-saffron);">How they got linked:</strong> The 2023 Act conditioned women's reservation on a post-Census delimitation (Article 334A). This created a chain reaction — any delimitation now inevitably reopens the seat-expansion and north-south representation debate. The April 2026 bills tried to resolve both at once, bundling women's reservation with a broad constitutional restructuring. Opposition parties who voted <em>for</em> the 2023 Act voted <em>against</em> the 2026 bills — not because they opposed women's reservation, but because the bills added unacceptable elements to it. The opposition's stated position: delink women's reservation from delimitation and pass them as separate legislation.</p>
+        </div>
+      </div>
+
+      <!-- Outcome box -->
+      <div class="alert-box" style="background:#3d1408;">
+        <div class="alert-icon">❌</div>
+        <div class="alert-content">
+          <h3>April 17, 2026: The 131st Amendment Bill is Defeated — A Historic First</h3>
+          <p>298 votes in favour, 230 against. Of 528 members present, the government needed 352 (two-thirds majority under Article 368) and fell short by 54 votes. The government withdrew the Delimitation Bill and UT Laws Bill immediately after. This was the <strong>first time a constitutional amendment introduced by the Modi government failed in the Lok Sabha</strong>. The Nari Shakti Vandan Adhiniyam (2023) remains law and was officially notified as in force on April 16, 2026 — but women's reservation still cannot activate without a completed delimitation exercise.</p>
+        </div>
+      </div>
+
+      <!-- Two-column debate breakdown -->
+      <div class="col2" style="margin-top:28px;">
+        <div>
+          <div style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent-green); background:#e8f4f0; padding:8px 14px; margin-bottom:12px; border-radius:2px;">The Women's Reservation Debate — Settled by 2023 Act</div>
+          <div class="detail-box">
+            <div class="detail-box-title">What Is Already in the Constitution</div>
+            <ul>
+              <li>33% of Lok Sabha seats reserved for women — <strong>enacted (Art. 330A)</strong></li>
+              <li>33% of every state assembly reserved — <strong>enacted (Art. 332A)</strong></li>
+              <li>SC/ST sub-quota within women's seats — <strong>enacted</strong></li>
+              <li>15-year sunset clause, extendable by Parliament — <strong>enacted (Art. 334A)</strong></li>
+              <li>Seats rotate after each delimitation — <strong>enacted</strong></li>
+              <li>All major parties voted in favour in September 2023</li>
+            </ul>
+          </div>
+          <div class="detail-box" style="margin-top:12px;">
+            <div class="detail-box-title">What Remains Unresolved in This Debate</div>
+            <ul>
+              <li>OBC sub-quota — not enacted; still a live demand from SP, RJD and allies</li>
+              <li>Rajya Sabha and state Legislative Council reservation — not addressed</li>
+              <li><strong>Implementation date</strong> — still contingent on a delimitation exercise that has not happened</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:#b85c2a; background:#fef0e8; padding:8px 14px; margin-bottom:12px; border-radius:2px;">The Delimitation Debate — Separate, Ongoing</div>
+          <div class="detail-box">
+            <div class="detail-box-title">The North-South Fault Line</div>
+            <p style="font-size:0.83rem; color:var(--ink); line-height:1.6; margin-bottom:8px;">India's Lok Sabha seats were frozen based on 1971 Census data — to prevent states with effective family planning from losing seats. Population-proportional delimitation using 2011 data would mean:</p>
+            <ul>
+              <li>Tamil Nadu: 39 → ~32 seats (−7)</li>
+              <li>Kerala: 20 → ~15 seats (−5)</li>
+              <li>Uttar Pradesh: 80 → ~89 seats (+9)</li>
+              <li>Bihar: 40 → ~46 seats (+6)</li>
+            </ul>
+          </div>
+          <div class="detail-box" style="margin-top:12px;">
+            <div class="detail-box-title">Why Opposition Voted Against in 2026</div>
+            <ul>
+              <li>Southern state parties feared a permanently diminished political voice</li>
+              <li>The constitutional amendment gave Parliament (simple majority) power over timing of delimitation — weakening Rajya Sabha's oversight role</li>
+              <li>The bill would have changed the Lok Sabha-to-Rajya Sabha seat ratio from 2.2:1 to 3.3:1 — tilting power in joint sittings toward the government</li>
+              <li>Opposition argued these were unrelated to women's reservation and should not be bundled with it</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- The three bills, with outcome labels -->
+      <div style="margin-top:28px;">
+        <div style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:12px;">The Three Bills — Introduced April 16, Voted Down / Withdrawn April 17, 2026</div>
+        <div class="bills-grid">
+          <div class="bill-card" style="border-color:#c47a6a; background:#fff8f6;">
+            <div class="bill-number" style="color:#b85c2a;">❌ Constitution (131st Amendment) Bill — DEFEATED (298–230)</div>
+            <div class="bill-name">The Core Amendment</div>
+            <p class="bill-desc">Would have expanded Lok Sabha maximum from 550 to 850 seats (815 from states + 35 from UTs). Reverted to population-proportional seat allocation. Gave Parliament authority via simple majority to choose which Census to use. Amended Article 334A to delink women's reservation from Census 2027. Required 352 votes; received 298.</p>
+          </div>
+          <div class="bill-card" style="border-color:#c47a6a; background:#fff8f6;">
+            <div class="bill-number" style="color:#b85c2a;">↩ Delimitation Bill, 2026 — WITHDRAWN</div>
+            <div class="bill-name">The Mechanism</div>
+            <p class="bill-desc">Would have constituted a Delimitation Commission using 2011 Census data (the latest published census, as 2021 was postponed and 2027 Census not yet completed). Withdrawn after the 131st Amendment failed — could not proceed without the constitutional foundation.</p>
+          </div>
+          <div class="bill-card" style="border-color:#c47a6a; background:#fff8f6;">
+            <div class="bill-number" style="color:#b85c2a;">↩ UT Laws (Amendment) Bill — WITHDRAWN</div>
+            <div class="bill-name">The Extension</div>
+            <p class="bill-desc">Would have applied parallel seat-expansion and delimitation provisions to Puducherry, Delhi, and Jammu &amp; Kashmir assemblies. Also withdrawn after the constitutional amendment fell. Women's reservation for Delhi and Puducherry remains legally intact under the 2023 Act — but similarly dormant.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- What next -->
+      <div class="timeline-arrow" style="margin-top:28px;">
+        <h4>Where Does Women's Reservation Go From Here?</h4>
+        <div class="col2" style="margin-top:8px;">
+          <div class="detail-box">
+            <div class="detail-box-title">Current Legal Status (as of April 2026)</div>
+            <ul>
+              <li>The 106th Amendment (Nari Shakti Vandan Adhiniyam) was officially notified as in force on April 16, 2026</li>
+              <li>Article 334A still conditions activation on post-Census delimitation</li>
+              <li>Census 2027 reference date: March 1, 2027</li>
+              <li>Last delimitation exercise (2002) took 6 years to complete</li>
+              <li><strong>Women's reservation cannot realistically apply to 2029 elections</strong></li>
+              <li>Earliest plausible implementation: 2034 Lok Sabha elections</li>
+            </ul>
+          </div>
+          <div class="detail-box">
+            <div class="detail-box-title">Possible Paths Forward</div>
+            <ul>
+              <li>A narrower bill that only removes the Census-delimitation condition from Article 334A — without changing seat numbers or allocation formulas — might win broader support</li>
+              <li>Government could bring revised bills in a future session decoupling seat expansion from women's reservation</li>
+              <li>If no legislative fix: reservation activates via Census 2027 + delimitation, but not before 2034</li>
+              <li>The political pressure will intensify as 2029 elections approach with reservation still inoperative</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="pullquote" style="margin-top:24px;">
+        <p>The 2023 Act was passed unanimously. The 2026 bills failed 298 to 230. The difference was not a change of heart on women's reservation — it was the delimitation and seat-expansion package that was bundled with it. The clearest path forward may be what the opposition actually asked for: delink the two issues and legislate them separately.</p>
+        <cite>— Synthesis from The Wire, LiveLaw, Drishti IAS, and PRS Legislative Research, April 2026</cite>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── DOCUMENTS ─────────────────────────────────────────── -->
+  <div id="docs-section">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div class="section-title-wrap">
+        <div class="section-kicker">Primary Sources</div>
+        <div class="section-title">Key Documents</div>
+      </div>
+    </div>
+
+    <div class="docs-section">
+      <p style="max-width:700px; font-size:0.9rem; color:var(--muted); margin-bottom:0;">All primary legislative documents cited in this page are publicly available. These are the definitive sources for researchers, lawyers, and citizens who want to go beyond the summary.</p>
+      <div class="docs-grid">
+        <a class="doc-card" href="https://prsindia.org/files/bills_acts/bills_parliament/2023/Bill_Summary-Womens_Reservation_Bill_2023.pdf" target="_blank">
+          <div class="doc-icon">📋</div>
+          <div>
+            <div class="doc-type">PRS Bill Summary</div>
+            <div class="doc-title">Women's Reservation Bill 2023 — Summary</div>
+            <div class="doc-year">PRS Legislative Research · 2023</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://prsindia.org/billtrack/the-constitution-one-hundred-twenty-eighth-amendment-bill-2023" target="_blank">
+          <div class="doc-icon">⚖️</div>
+          <div>
+            <div class="doc-type">PRS Bill Track</div>
+            <div class="doc-title">Constitution (128th Amendment) Bill, 2023 — Full Legislative Brief</div>
+            <div class="doc-year">PRS Legislative Research · 2023</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://prsindia.org/files/bills_acts/bills_parliament/2008/scr_Women_Reservation_Bill_2009.pdf" target="_blank">
+          <div class="doc-icon">📜</div>
+          <div>
+            <div class="doc-type">Standing Committee Report</div>
+            <div class="doc-title">36th Report on the Constitution (108th Amendment) Bill, 2008</div>
+            <div class="doc-year">Rajya Sabha Standing Committee on Law &amp; Justice · December 2009</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://prsindia.org/files/parliament/vital_stats/Vital_Stats-Womens_Reservation.pdf" target="_blank">
+          <div class="doc-icon">📊</div>
+          <div>
+            <div class="doc-type">PRS Vital Stats</div>
+            <div class="doc-title">Women in Parliament and State Assemblies</div>
+            <div class="doc-year">PRS Legislative Research · September 2023</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://prsindia.org/billtrack/the-constitution-131st-amendment-bill-2026" target="_blank">
+          <div class="doc-icon">❌</div>
+          <div>
+            <div class="doc-type">PRS Bill Track · Defeated</div>
+            <div class="doc-title">Constitution (131st Amendment) Bill, 2026 — Defeated in Lok Sabha</div>
+            <div class="doc-year">PRS Legislative Research · April 2026</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://www.livelaw.in/top-stories/lok-sabha-rejects-constitution-131st-bill-2026-on-delimitation-530736" target="_blank">
+          <div class="doc-icon">📰</div>
+          <div>
+            <div class="doc-type">LiveLaw · News Report</div>
+            <div class="doc-title">Lok Sabha Rejects Constitution (131st) Amendment Bill 2026 — Vote count and analysis</div>
+            <div class="doc-year">LiveLaw · April 17, 2026</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://egazette.gov.in" target="_blank">
+          <div class="doc-icon">🇮🇳</div>
+          <div>
+            <div class="doc-type">Official Gazette</div>
+            <div class="doc-title">Constitution (106th Amendment) Act, 2023 — Presidential Assent &amp; Gazette Notification</div>
+            <div class="doc-year">Ministry of Law &amp; Justice · 28 September 2023</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://164.100.213.102/RSCMSNew/UploadedFiles/ElectronicPublications/reserv_women_pers2008.pdf" target="_blank">
+          <div class="doc-icon">📚</div>
+          <div>
+            <div class="doc-type">Rajya Sabha Secretariat</div>
+            <div class="doc-title">Reservation of Seats for Women in Legislative Bodies: Perspectives</div>
+            <div class="doc-year">Rajya Sabha Secretariat · July 2008</div>
+          </div>
+        </a>
+        <a class="doc-card" href="https://wcd.nic.in/sites/default/files/Executive Summary_HLC_0.pdf" target="_blank">
+          <div class="doc-icon">📑</div>
+          <div>
+            <div class="doc-type">Ministry of WCD</div>
+            <div class="doc-title">Report on the Status of Women in India — Executive Summary</div>
+            <div class="doc-year">Ministry of Women &amp; Child Development · 2015</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end main-wrap -->
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-sources">
+      <h4>Sources &amp; Methodology</h4>
+      <ol>
+        <li>PRS Legislative Research — <em>Women in Parliament and State Assemblies</em> (Vital Stats, September 2023). All statistical data on women's representation.</li>
+        <li>Constitution (One Hundred and Twenty-Eighth Amendment) Bill, 2023 — Bill as introduced in Lok Sabha, September 18, 2023.</li>
+        <li>Constitution (One Hundred and Sixth Amendment) Act, 2023 — Gazette of India Extraordinary, Part II Section 1, September 28, 2023.</li>
+        <li>36th Report of the Standing Committee on Personnel, Public Grievances, Law and Justice — on the Constitution (108th Amendment) Bill, 2008. Presented to Rajya Sabha, December 17, 2009.</li>
+        <li>PRS Legislative Research — Bill Track: Constitution (131st Amendment) Bill, 2026.</li>
+        <li>Down to Earth — "Women's Reservation Act: Why India Is Amending Its Own Amendment for 2029 Quotas" (April 2026).</li>
+        <li>Inter-Parliamentary Union — Women in National Parliaments statistics, September 2023.</li>
+      </ol>
+    </div>
+    <div>
+      <h4 style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--parchment); margin-bottom:12px;">About This Page</h4>
+      <p>This page was built as an open educational resource documenting the legislative history of women's political reservation in India. All source documents are publicly available and linked above. Content is accurate as of April 2026.</p>
+      <p style="margin-top:12px;">Primary sources: <a href="https://prsindia.org">PRS Legislative Research</a>, Lok Sabha and Rajya Sabha Secretariats, Ministry of Law and Justice, Election Commission of India.</p>
+    </div>
+  </div>
+  <div style="border-top:1px solid #3a3225; padding-top:20px; font-size:0.72rem;">
+    Data from PRS Legislative Research is used under their non-commercial redistribution terms with acknowledgement. All linked documents remain the property of their respective government bodies. This page contains no copyrighted text reproduced verbatim.
+  </div>
+</footer>
+
+<script>
+  // Toggle detail panels
+  function toggleDetail(headerEl) {
+    const card = headerEl.closest('.tl-card');
+    const detail = card.querySelector('.tl-detail');
+    const btn = card.querySelector('.tl-expand-btn');
+    if (detail.classList.contains('open')) {
+      detail.classList.remove('open');
+      btn.classList.remove('open');
+      btn.textContent = 'Read full analysis';
+      btn.classList.remove('open');
+      btn.insertAdjacentText('beforeend', '');
+    } else {
+      detail.classList.add('open');
+      btn.classList.add('open');
+      btn.textContent = 'Close';
+    }
+  }
+
+  // Smooth scroll to section
+  function scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Build Lok Sabha chart
+  const lsData = [
+    { ls: '1st', pct: 4.4 }, { ls: '2nd', pct: 6.7 }, { ls: '3rd', pct: 6.7 },
+    { ls: '4th', pct: 5.9 }, { ls: '5th', pct: 4.2 }, { ls: '6th', pct: 19.5 },
+    { ls: '7th', pct: 5.1 }, { ls: '8th', pct: 8.1 }, { ls: '9th', pct: 5.2 },
+    { ls: '10th', pct: 7.0 }, { ls: '11th', pct: 7.4 }, { ls: '12th', pct: 8.1 },
+    { ls: '13th', pct: 8.8 }, { ls: '14th', pct: 8.3 }, { ls: '15th', pct: 10.7 },
+    { ls: '16th', pct: 11.8 }, { ls: '17th', pct: 14.6 }
+  ];
+
+  const maxPct = Math.max(...lsData.map(d => d.pct));
+  const chartEl = document.getElementById('lsChart');
+  const chartHeight = 130;
+
+  lsData.forEach(d => {
+    const h = (d.pct / maxPct) * chartHeight;
+    const group = document.createElement('div');
+    group.className = 'bar-group';
+    group.innerHTML = `
+      <div class="bar" style="height:${h}px;" title="${d.ls} Lok Sabha: ${d.pct}%">
+        <span class="bar-val">${d.pct}%</span>
+      </div>
+      <div class="bar-label">${d.ls}</div>
+    `;
+    chartEl.appendChild(group);
+  });
+
+  // Parliament dot graphic — single semicircle, three colours
+  (function() {
+    const container = document.getElementById('parliament-dots');
+    if (!container) return;
+    const total = 543;
+    const womenNow = 74;      // solid red — current women MPs
+    const womenTarget = 181;  // pale rose — seats that SHOULD be reserved
+    const rowSeats = [40, 57, 68, 78, 88, 97, 115];
+
+    // Build the two sets: leftmost seats per row, proportionally
+    function buildSet(count) {
+      const set = new Set();
+      let seat = 0, placed = 0;
+      rowSeats.forEach(seats => {
+        const inRow = Math.round((seats / total) * count);
+        for (let s = 0; s < seats && placed < count; s++) {
+          if (s < inRow) { set.add(seat + s); placed++; }
+        }
+        seat += seats;
+      });
+      return set;
+    }
+
+    const nowSet    = buildSet(womenNow);
+    const targetSet = buildSet(womenTarget);
+
+    const W = 280, H = 160;
+    const cx = W / 2, cy = H;
+    const r = 2.4, rowGap = 9, innerR = H - 6;
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.setAttribute('width', '100%');
+    svg.setAttribute('height', H);
+    svg.style.display = 'block';
+    svg.style.maxWidth = W + 'px';
+
+    let idx = 0;
+    rowSeats.forEach((seats, rowNum) => {
+      const radius = innerR - rowNum * rowGap;
+      for (let s = 0; s < seats; s++) {
+        const angle = Math.PI - (s / (seats - 1)) * Math.PI;
+        const x = cx + radius * Math.cos(angle);
+        const y = cy - radius * Math.sin(angle);
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('cx', x.toFixed(1));
+        c.setAttribute('cy', y.toFixed(1));
+        c.setAttribute('r', r);
+        if (nowSet.has(idx)) {
+          // Current women MPs — solid red
+          c.setAttribute('fill', '#e05252');
+          c.setAttribute('opacity', '1');
+        } else if (targetSet.has(idx)) {
+          // Gap to 33% target — pale rose
+          c.setAttribute('fill', '#e8948a');
+          c.setAttribute('opacity', '0.4');
+        } else {
+          // Men MPs — dark neutral
+          c.setAttribute('fill', '#6a5f50');
+          c.setAttribute('opacity', '0.3');
+        }
+        svg.appendChild(c);
+        idx++;
+      }
+    });
+    container.appendChild(svg);
+  })();
+  const sections = ['data-section','timeline-section','provisions-section','debate-section','current-section','docs-section'];
+  const navBtns = document.querySelectorAll('.nav-btn');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) current = id;
+    });
+    navBtns.forEach((btn, i) => {
+      btn.classList.toggle('active', sections[i] === current);
+    });
+  });
+</script>
+</body>
+</html>
